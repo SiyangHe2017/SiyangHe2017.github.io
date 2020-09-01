@@ -87,15 +87,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最大公约数(Greatest Common Divisor)[GCD]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span>(<span class="params">a, b</span>):</span></span><br><span class="line">		a, b = (a, b) <span class="keyword">if</span> a&gt;=b <span class="keyword">else</span> (b, a)</span><br><span class="line">		<span class="keyword">while</span> b:</span><br><span class="line">				a, b = b, a%b</span><br><span class="line">		<span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span>(<span class="params">a, b</span>):</span></span><br><span class="line">  a, b = (a, b) <span class="keyword">if</span> a&gt;=b <span class="keyword">else</span> (b, a)</span><br><span class="line">  <span class="keyword">while</span> b:</span><br><span class="line">    a, b = b, a%b</span><br><span class="line">  <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
 
 <p>最小公约数（Least Common Multiple)[LCM]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcm</span>(<span class="params">a, b</span>):</span></span><br><span class="line">		<span class="keyword">return</span> a*b//gcd(a, b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcm</span>(<span class="params">a, b</span>):</span></span><br><span class="line">  <span class="keyword">return</span> a*b//gcd(a, b)</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckejk31ro00008zwk36ujao3p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckejw73qt00020owk8oere4ir" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +178,7 @@
 <p>ord() 把字符转成ASCII数值<br>例: ord(‘a’) —&gt; 97<br>chr() 用一个范围在range(256)内(即0～255)的整数作参数，返回一个对应的字符<br>例: chr(97) —&gt; a  </p>
 <p><strong>__name __ 是内置变量，用于表示当前模块的名字，当模块被直接运行时模块名为 __main__ 。</strong> 所以 if__name__==’__main__‘的简单理解是，如果模块是被直接运行的，则代码被导入，如果模块是被导入的，则代码块不运行。</p>
 <p>reverse()函数用于反向列表中的元素<br>语法: list.reverse()<br>参数: NA<br><strong>返回值: 该方法无返回值，但是会对列表中的元素进行反向排序</strong></p>
-<p>Difference between input() and sys.stdin.readline() (More see <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/difference-between-input-and-sys-stdin-readline/">GeeksforGeeks</a> )</p>
+<p>Difference between input() and sys.stdin.readline() (from <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/difference-between-input-and-sys-stdin-readline/">GeeksforGeeks</a> )</p>
 <table>
 <thead>
 <tr>
@@ -195,7 +195,7 @@
 <td align="center">readline() has a arameter named size, which is a non-negative number. It defines the bytes to be read</td>
 </tr>
 </tbody></table>
-<p>zip()函数用于将可迭代的对象作为参数，将对象中大的元素打包成一个个元组，然后返回由这些元组组成的<strong>对象</strong><br>我们可以使用list()转换来输出列表<br>例:<br>a = [1, 2, 3]<br>b = [4, 5, 6]<br>list(zip(a, b)<br>&gt;&gt; [(1, 4), (2, 5), (3, 6)]</p>
+<p>zip()函数用于将可迭代的对象作为参数，将对象中大的元素打包成一个个元组，然后返回由这些元组组成的<strong>对象</strong><br>我们可以使用list()转换来输出列表<br>例:<br>a = [1, 2, 3]<br>b = [4, 5, 6]<br>list(zip(a, b))<br>&gt;&gt; [(1, 4), (2, 5), (3, 6)]</p>
 <p>Check if a given key alaready  exists in a dictionary:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">&#x27;key1&#x27;</span> <span class="keyword">in</span> dict.keys():</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 
@@ -211,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckejk31rv00028zwkgzss2lxl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckejw73qv00030owk5xi9co9d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckejk31rv00038zwkdche9aek" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckejw73qo00000owkgclibqqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckejk31rt00018zwk8cj358s8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckejw73qs00010owk8ih8dhhq" class="article-share-link">Share</a>
       
       
     </footer>
