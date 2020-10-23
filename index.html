@@ -66,8 +66,8 @@
   
     <article id="post-计算机网络面试" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" class="article-date">
-  <time datetime="2020-10-18T12:25:31.000Z" itemprop="datePublished">2020-10-18</time>
+    <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" class="article-date">
+  <time datetime="2020-10-23T06:02:53.000Z" itemprop="datePublished">2020-10-23</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
+      <a class="article-title" href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
     </h1>
   
 
@@ -92,11 +92,11 @@
 <p>4: HTTP状态码？<br>1xx—信息型, 服务器收到请求, 需要请求者继续操作<br>2xx—成功型, 请求成功收到, 理解并处理<br>3xx—重定向, 需要进一步操作以完成请求<br>4xx—客服端错误, 请求包含语法错误<br>5xx—服务器错误, 服务器在处理请求的过程中错误</p>
 <p>100 continue[目前为止请求都很正常]<br>200 OK<br>301 永久性重定向<br>302 临时性重定向<br>404 Not Modified<br>400 请求报文中存在语法错误<br>403 请求被拒绝<br>404 Not Found<br>500 服务器正在执行请求时发生错误<br>503 服务器暂时处于超负载或正在处于停机维护<br>504 未及时从远端服务器获取请求  </p>
 <p>5: TCP为什么要三次握手？<br><strong>三次握手的目的: 明确自己和对方的收发能力是正常的</strong><br><strong>第一次握手: 客户端发送网络包, 服务端收到了</strong><br>这样服务端就可以得出结论: 客户端的发送能力, 服务端的接收能力是正常的.<br><strong>第二次握手: 服务端发包,客户端收到了</strong><br>这样客户端就能得出结论: 服务端的接收能力,发送能力是正常的;客户端的接受, 发送能力是正常的. 不过此时服务器不能确认客户端的接受能力是正常的.<br><strong>第三次握手: 客户端发包,服务端收到了</strong><br>这样服务端就能得出结论: 客户端的接收,发送能力正常;服务器自己的发送,接收能力也是正常.</p>
-<p>6: TCP三次握手的过程？<br><img src="TCP/TCP-three-way-handshake.png" alt="TCP-three-way-handshake"><br><strong>第一次握手(SYNbit=1, Seq=x)</strong><br>客服端发送一个SYN标志位为1的包,指明客户端的初始化序列号x,此时客户端处于SYN_SEND<br><strong>第二次握手(SYNbit=1, Seq=y, ACKbit=1,ACKnum=x+1)</strong><br>服务器发回确认包应答,即SYN标志位和ACK标志位均为1,并且指定了自己的初始化序列号y,同时把客户端的ISN+1作为ACKnum的值, 表示自己已经收到了客户端的SYN报文,此时服务器处于SYN_REVD状态<br><strong>第三次握手(ACKbit=1, ACKnum=y+1)</strong><br>客户端再次发送确认包,SYN标志位为0,ACK标志位为1.同样地把服务器的ISN+1作为ACK的值,表示已经收到了服务器的SYN报文,此时客户端处于ESTABLISHED状态.服务器收到ACK报文之后,也处于ESTABLIEHED状态, 此时,双方已建立起连接.<br><strong>注:SYN:同步序列编号(Synchronized Sequence Number)</strong><br><strong>ISN: Initial Sequence Number</strong></p>
+<p>6: TCP三次握手的过程？<br><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/TCP-three-way-handshake.png" alt="TCP-three-way-handshake"><br><strong>第一次握手(SYNbit=1, Seq=x)</strong><br>客服端发送一个SYN标志位为1的包,指明客户端的初始化序列号x,此时客户端处于SYN_SEND<br><strong>第二次握手(SYNbit=1, Seq=y, ACKbit=1,ACKnum=x+1)</strong><br>服务器发回确认包应答,即SYN标志位和ACK标志位均为1,并且指定了自己的初始化序列号y,同时把客户端的ISN+1作为ACKnum的值, 表示自己已经收到了客户端的SYN报文,此时服务器处于SYN_REVD状态<br><strong>第三次握手(ACKbit=1, ACKnum=y+1)</strong><br>客户端再次发送确认包,SYN标志位为0,ACK标志位为1.同样地把服务器的ISN+1作为ACK的值,表示已经收到了服务器的SYN报文,此时客户端处于ESTABLISHED状态.服务器收到ACK报文之后,也处于ESTABLIEHED状态, 此时,双方已建立起连接.<br><strong>注:SYN:同步序列编号(Synchronized Sequence Number)</strong><br><strong>ISN: Initial Sequence Number</strong></p>
 <p>7: ISN(Initial Sequence Number)是固定的吗？<br>三次握手的其中一个重要功能是客户端和服务端交换ISN(Initial Sequence Number), 以便让对方知道接下来接收数据的时候是如何按序列号组装数据.如果ISN是固定的, 攻击者很容易猜出后续的确认号.因此ISN是动态生成的,ISN随时间而变化,因此每个连接具有不同的ISN.</p>
 <p>8: 三次握手可以携带数据吗？<br>第三次握手的时候是可以携带数据的,但是第一次,第二次握手是不可以携带数据的.<br>第一次握手不可以携带数据,其中一个简单的原因就是让服务器更容易受到攻击了.而对于第三次的话,此时客户端已经处于ESTABLISHED状态.对于客户端来说,它已经建立连接了,并且也已经知道服务器的接受,发送能力是正常的了,所以携带数据也没啥毛病.</p>
 <p>9: 为什么建立连接是三次握手？而关闭连接是四次挥手？<br>建立连接时,服务端在LISTEN状态下,收到建立连接请求的SYN报文后,把SYN和ACK放在一个报文里发送给客户端<br>关闭连接时,服务端在收到对方FIN报文时,仅仅表示客户端不再发送数据了,但是还可以接受数据,已方是否现在关闭发送数据的通道,需要上层应用来决定.</p>
-<p>10: 四次挥手的过程<br><img src="TCP/TCP-four-way-handshake.png" alt="TCP-four-way-handshake"><br><strong>第一次挥手(FINbit=1, Seq=x)</strong><br>假设客户端想要关闭连接,客户端发送一个FIN标志位置为1的包,表明自己已经没有数据可以发送了,但是仍然可以接受数据.<br><strong>第二次挥手(ACKbit=1, ACKnum=x+1, Seq=y)</strong><br>服务器收到客户端的FIN包, 发送了一个确认包, 表明自己接受到了客户端关闭连接的请求, 但是还没准备关闭连接<br>发送完毕后,服务器进入CLOSE_WAIT状态,客户端收到这个确认包之后进入FIN_WAIT_2状态,等待服务器关闭连接.<br><strong>第三次挥手(FINbit=1, Seq=y, ACKbit=1, ACKnum=x+1)</strong><br>服务端准备好关闭连接时,向客户端发送结束连接的请求,FIN标志位置为1,发送完毕后,服务器进入LAST_ACK状态,等待来自客户端的最后一个ACK<br><strong>第四次挥手</strong><br>客户端接受到来自服务端的关闭请求,发送一个确认包,并进入TIME_WAIT状态,等待可能出现要求重传的ACK包;服务器端接受到这个确认包后,关闭连接,进入close状态;客户端等待某个固定时间(2MSL, 2Maximum Segment Lifetime)之后,没有收到服务器端的ACK,认为服务器已正常关闭连接,于是自己也关闭连接进入CLOSED状态.</p>
+<p>10: 四次挥手的过程<br><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/TCP-four-way-handshake.png" alt="TCP-four-way-handshake"><br><strong>第一次挥手(FINbit=1, Seq=x)</strong><br>假设客户端想要关闭连接,客户端发送一个FIN标志位置为1的包,表明自己已经没有数据可以发送了,但是仍然可以接受数据.<br><strong>第二次挥手(ACKbit=1, ACKnum=x+1, Seq=y)</strong><br>服务器收到客户端的FIN包, 发送了一个确认包, 表明自己接受到了客户端关闭连接的请求, 但是还没准备关闭连接<br>发送完毕后,服务器进入CLOSE_WAIT状态,客户端收到这个确认包之后进入FIN_WAIT_2状态,等待服务器关闭连接.<br><strong>第三次挥手(FINbit=1, Seq=y, ACKbit=1, ACKnum=x+1)</strong><br>服务端准备好关闭连接时,向客户端发送结束连接的请求,FIN标志位置为1,发送完毕后,服务器进入LAST_ACK状态,等待来自客户端的最后一个ACK<br><strong>第四次挥手</strong><br>客户端接受到来自服务端的关闭请求,发送一个确认包,并进入TIME_WAIT状态,等待可能出现要求重传的ACK包;服务器端接受到这个确认包后,关闭连接,进入close状态;客户端等待某个固定时间(2MSL, 2Maximum Segment Lifetime)之后,没有收到服务器端的ACK,认为服务器已正常关闭连接,于是自己也关闭连接进入CLOSED状态.</p>
 <p>11: 客户端接受服务器端的FIN报文后进入TIMED_WAIT状态,此时并不是直接进入CLOSE状态,还需等待一个时间计时器2MSL.为什么？<br>1）保证客户端发送的最后一个ACK报文端能够到达服务端—这个ACK报文端可能丢失,使得处于LAST-ACK状态的服务端收不到对已方发送的FIN+ACK报文端的确认,服务端超时重传FIN+ACK报文段,而客户端在2MSL时间内收到这个重传的FIN+ACK报文段,接着客户端重传一次确认,重新启动2MSL计时器,最后客户端和服务的都进入到closed状态,若客户端在TIMED_WAIT状态下不等待一段时间,而是发送完ACK报文端后立即释放连接,则无法收到服务的重传的FIN+ACK报文段,所以不会再发送一次确认报文段,则服务端无法进入CLOSED状态.<br>2）客户端在发送完最后一个ACK报文段后,再经过2MSL,就可以使本地连接持续的时间内所产生的所有报文端都从网络中消失,使下一个新的连接中不会出现这种旧的连接请求报文段.<br>[注: MSL(Maximum Segment Lifetime)译为”报文最大生成时间”,也就是任何报文网络上存在的最长时间,超过这个时间报文将被丢弃.]</p>
 <p>12: TCP的可靠性到底是指什么？<br>1）数据校验: 为了能够检测数据包在传输过程中是否发生了差错, TCP引入了check sum<br>2）序列号与确认机制:<br>TCP实现可靠传输的方式之一,是通过序列号与确认应答.<br>在TCP中,当发送端的数据到达接收主机时,接收端主机会返回一个确认应答消息,表示已收到消息.<br>3）定时重传:<br>由于网络抖动或不稳定等问题造成数据包丢失,在一段的时间段内接收端没有收到该数据包时,会告知发送端重传该数据包.<br>4）三次握手机制:<br>三次握手机制在一定程度上保证了数据的可靠传输, 两端在建立连接时, 通过三次握手机制来确认两端同步知晓连接.<br>5）拥塞控制:<br>防止过多的数据传入网络中造成网络设备或链路的负载,保证了数据稳定、安全、快速的传输.<br>6）流量控制:<br>流量控制是为了控制发送方的速率, 保证接收方来得及接收,避免发送方无脑发送数据,但对方处理不过来,导致触发重传机制,造成网络流量的无端浪费.</p>
 <p>13: TCP和UDP的区别和应用场景？<br>1） TCP有三次握手的连接过程; UDP无连接, 适合消息的多播发布,从单个点向多个点传输消息<br>2）TCP利用握手, ACK和重传机制, 提供了可靠的保证; 而UDP可能丢失,不知道到底有没有接收<br>3）TCP利用序列号保证了消息包的顺序交付,到达可能无序,但TCP会排序<br>4）TCP速度比较慢,因为要创建连接,保证消息的可靠性和有序性等,需要做很多额外的事情; UDP更适合对速度比较敏感的应用,比如在线视频媒体,电视广播,多人在线游戏.</p>
@@ -108,15 +108,15 @@
 <p>19: 什么是对称加密？什么是非对称加密？<br>对称加密: 对称加密算法中的加密和解密用的是同一个密匙<br>非对称加密：一个是保密的，称为私匙；另一个是公开的，称为公匙<br>用私匙加密的数据，只有对应的公匙才能解密。<br>用公匙加密的数据，只有对应的私匙才能解密。<br>公匙是公开的，而私匙是保密的。</p>
 <p>20: 转发和重定向的区别？<br><strong>转发: ** 发送在服务器内部的跳转，所以，对客户端来说，至始至终就是一次请求。</strong>所以这期间，保存在request对象的数据可以传递<br>重定向: <strong>发送在客户端的跳转，所以，是多次请求。</strong>这个时候，如果需要在多次请求之间传递数据，需要session对象。<br>重定向：可以理解为客户端行为，客户端发起一次请求，服务端给出一次响应，但这个响应包含下一次客户端需要访问的服务器端处理程序的地址，客户端再次发起请求，将会得到处理结果，也就意味着客户端至少发起两次请求<br>请求转发：服务端行为，客户端发起一次请求，这个请求在服务端可以被多次传递，但都是由服务器端的处理程序传递给另外一个处理程序，客户端不需要发起二次请求，无论这个请求经历过多少个处理程序，始终都是同一个请求。</p>
 <p>21: Session和Cookie的区别？<br>Session是在服务端保存的一个数据结构，用来跟踪用户状态。<br>Cookie是客户端保存信息的一种机制，用来记录用户的一些信息。</p>
-<p>22: IP地址？A/B/C类地址？子网掩码？<br>IP地址=网络号(表示其属于互联网的哪一个网络)+主机号(表示其属于该网络中的哪一天主机)<br>(全0和全1都保留不用,每一个字节都为0的地址(0.0.0.0)对应当前主机,IP地址中每一个字节都为1的地址(255.255.255.255)是当前子网的广播地址)<br><img src="TCP/IP-address.png" alt="IP-address"><br>网络掩码又叫子网掩码,它是一种指明一个IP地址的的哪些标识是主机所在的网络地址以及哪些表示标识是主机地址的位掩码。通俗的说，就是将某个IP地址划分成网络地址和主机地址两部分。</p>
+<p>22: IP地址？A/B/C类地址？子网掩码？<br>IP地址=网络号(表示其属于互联网的哪一个网络)+主机号(表示其属于该网络中的哪一天主机)<br>(全0和全1都保留不用,每一个字节都为0的地址(0.0.0.0)对应当前主机,IP地址中每一个字节都为1的地址(255.255.255.255)是当前子网的广播地址)<br><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/IP-address.png" alt="IP-address"><br>网络掩码又叫子网掩码,它是一种指明一个IP地址的的哪些标识是主机所在的网络地址以及哪些表示标识是主机地址的位掩码。通俗的说，就是将某个IP地址划分成网络地址和主机地址两部分。</p>
 <p>表示方法(了解即可)<br>1）子网掩码的表示方法和地址本身的表示方法是一样的。在IPV4中，就是点分十进制四组表示法(255.128.0.0)<br>2）另一个更简短的形式叫无类别域间路由表示法，它给出的是一个地址和一个斜杠以网络掩码的二进制表示法中”1”的位数。例如，192.0.2.96/28表示的是一个前28位被用作网络号的IP地址。<br>[<strong>注意: 子网掩码二进制中1和0必须是连续的</strong>]</p>
 <p>23: ARP是什么？<br>ARP(Address Resolution Protocol)是一个通过解析网络层地址来找寻数据链路层地址的网络传输协议<br>1）首先，每个主机都会在自己的ARP缓冲区中建立一个ARP列表，以表示IP地址和MAC地址之间的对应关系<br>2）当源主机要发送数据时，首先检查ARP列表是否有对应IP地址的目的主机的MAC地址，如果有则直接发送数据，如果没有就向本网段的所有主机发送ARP数据包。该数据包包括：源主机IP地址，源主机MAC地址，目的主机IP地址。<br>3）当网络中的所有主机收到该ARP数据包时，首先检查数据包的IP地址是否是自己的IP地址，如果是，则从数据包中取出源主机的IP的和MAC地址写入ARP列表中，如果已存在，则覆盖，然后将自己的MAC地址写入ARP响应包中，告诉源主机自己是它想要找的MAC地址。<br>4）源主机收到ARP响应包后，将目的主机的IP和MAC地址写向ARP列表，并利用此信息发送数据，如果源主机一直没收到ARP响应数据包，表示ARP查询失败。<br>[广播发送ARP请求，单播发送ARP响应]</p>
-<p>24: 域名的级别以及DNS服务器的递归查询和迭代查询？<br>.代表根域名；.com这种是顶级域名，也叫做一级域名；baidu.com这种叫做二级域名<br><img src="TCP/DNS_Server.png" alt="DNS-Server"></p>
+<p>24: 域名的级别以及DNS服务器的递归查询和迭代查询？<br>.代表根域名；.com这种是顶级域名，也叫做一级域名；baidu.com这种叫做二级域名<br><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/DNS_Server.png" alt="DNS-Server"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckglu8ksz0004mywk5edp8hs5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckgluq9ve0004vbwk8pp5agms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckglu8kso0003mywkf4xoclxr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckgluq9vc0003vbwk2ikp9k5z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckglu8ksh0001mywkbnp90641" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckgluq9va0001vbwk0xx97pnh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckglu8ksa0000mywk4ka2hyf9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckgluq9v50000vbwk8eg3gxat" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckglu8ksk0002mywkctxqfvb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckgluq9vb0002vbwkc4to9rc8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +406,7 @@
       <ul>
         
           <li>
-            <a href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
+            <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
           </li>
         
           <li>
