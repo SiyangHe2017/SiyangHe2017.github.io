@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据库面试 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="事务是什么？事务是应用程序中一系列严密的操作，所有操作必须成功完成，否则在每个操作中所做的更改都会被撤销。也就是事务具有原子性：一个事务的一系列操作要么全部成功，要么一个都不做。Mysql事务commit之后无法回滚，未commit可以回滚。  数据库ACID的特性？原子性：事务是一个不可分割的工作单位，事务的操作要么都发生，要么都不发生。一致性：事务前后数据的完整性必须保持一致。隔离性：事务前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库面试">
+<meta property="og:url" content="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="事务是什么？事务是应用程序中一系列严密的操作，所有操作必须成功完成，否则在每个操作中所做的更改都会被撤销。也就是事务具有原子性：一个事务的一系列操作要么全部成功，要么一个都不做。Mysql事务commit之后无法回滚，未commit可以回滚。  数据库ACID的特性？原子性：事务是一个不可分割的工作单位，事务的操作要么都发生，要么都不发生。一致性：事务前后数据的完整性必须保持一致。隔离性：事务前">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-26T10:11:44.000Z">
+<meta property="article:modified_time" content="2020-10-29T10:56:45.658Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据库面试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" class="article-date">
+  <time datetime="2020-10-26T10:11:44.000Z" itemprop="datePublished">2020-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库面试
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>事务是什么？<br>事务是应用程序中一系列严密的操作，所有操作必须成功完成，否则在每个操作中所做的更改都会被撤销。也就是事务具有原子性：一个事务的一系列操作要么全部成功，要么一个都不做。Mysql事务commit之后无法回滚，未commit可以回滚。</p>
+</li>
+<li><p>数据库ACID的特性？<br>原子性：事务是一个不可分割的工作单位，事务的操作要么都发生，要么都不发生。<br>一致性：事务前后数据的完整性必须保持一致。<br>隔离性：事务前后数据库的完整性保持一致[应用系统从一个正确的状态到另一个正确的状态]<br>隔离性：多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间要相互隔离。<br>持久性：一个事务一旦提交，它对数据库中数据的改变就是永久性的，即使数据库故障也不应该对其有任何影响。<br>A(Atomicity)原子性、C(Consistency)一致性、I(Isolation)隔离性、D(Durability)持久性</p>
+</li>
+<li><p>数据库三大范式？<br>第一范式(1NF)：符合1NF的关系中的每个属性都不可再分<br>第二范式(2NF): 第二范式在第一范式的基础上更近一层。第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关(主要针对联合主键而言)<br>第三范式(3NF): 第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
+</li>
+<li><p>DDL、DML？<br>DML(Data Manipulation Language)数据库操纵语言。适用范围：对数据库的<strong>数据</strong>进行一些简单操作。如Insert、Delete、Update等。<br>DDL(Data Definition Language)。适用范围: 对数据库中的某些对象(例如database, table)进行管理，如Create、Alter和Drop。<br>区别:<br>1） DML操作是可以手动控制事务的开启，提交和回滚的。<br>2）DDL操作是隐性提交的，不能rollback！</p>
+</li>
+<li><p>drop、delete和truncate分别在什么场景下使用?<br>1）不再需要一张表的时候用drop<br>2）想删除部分数据行的时候用delete，并且带上where子句<br>3）保留表而删除所有数据用truncate</p>
+<table>
+<thead>
+<tr>
+<th align="center">drop table</th>
+<th align="center">truncate table</th>
+<th align="center">delete from</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">属于DDL(故不可回滚)</td>
+<td align="center">属于DDL(故不可回滚)</td>
+<td align="center">属于DML(故可回滚)</td>
+</tr>
+<tr>
+<td align="center">不可带where</td>
+<td align="center">不可带where</td>
+<td align="center">可带where</td>
+</tr>
+<tr>
+<td align="center">表内容和结构删除</td>
+<td align="center">表内容删除</td>
+<td align="center">表结构在，表内容看where执行情况</td>
+</tr>
+<tr>
+<td align="center">删除速度快</td>
+<td align="center">删除速度快</td>
+<td align="center">删除速度慢，需逐行删除</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ol start="6">
+<li><p>什么是视图以及视图的使用场景有哪些？<br>视图是一种虚拟的表，具有和物理表相同的功能。可以对视图进行增、删、改、查操作。视图通常是一个表或者多个表的行或列的子集。对视图的修改不影响基本表，它使我们获取数据更容易。<br>视图的使用场景:<br>1）只暴露部分字段给访问者，所以就建一个虚表，就是视图。<br>2）查询的数据来源于不同的表，而查询者希望以统一的方式查询，这样也可以建一个视图，把多个查询结构联合起来，查询者只需要从视图中获取数据，不必考虑数据来源于不同表带来的差异。</p>
+</li>
+<li><p>超键、候选键、主键、外键分别是什么？<br>1）超键：在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以作为超键，多个属性组合在一起也可以作为超键。超键包含候选键和主键。<br>2）候选键：最小超键，即没有冗余元素的超键。<br>3）主键：数据库表中对储存数据对象予以唯一和完整标识的对象或属性的组合。一个数据表中只能有一个主键且主键的取值不能丧失，即不能为空值(NULL)。<br>4）外键：在一个表中存在的另一个表的主键称为此表的外键。</p>
+</li>
+<li><p>Mysql如何保证事务的四种特性？<br>1）原子性（Atomicity)<br>Mysql数据库事务的所有修改操作（增、删、改）的相反操作都会写入undo log。比如事务执行了一条insert语句，那么undo log就会记录一条相应的delete语句。一旦发生故障，导致事务无法成功提交，系统则会执行undo log中相应的撤销操作，达到事务回滚的目的。<br>2）持久性（Durability)<br>事务的所有修改操作（增、删、改)，数据库会生成一条redo日志记录到redo log。区别于undo log记录SQL语句，redo log记录的是事务对数据库的哪个数据页做了什么修改。<br>redo日志应用场景：数据库系统直接崩溃，需要进行恢复，一般数据库都会按时间点备份的策略，首先将数据库恢复到最近备份的时间点状态，之后读取该时间点的redo log记录，重新执行相应记录，达到恢复目的。<br>3）隔离线（Isolation)<br>通过锁与MVCC（Multi Version Concurrency Control)机制<br>4）一致性（Consistency)<br>在数据库层面上，数据库通过原子性、隔离性、持久性来保证一致性。也就是ACID四大特性之中，C(一致性)是目的，A(原子性)、I(隔离性)、D(持久性)是手段，是为了保证一致性。在应用层面上，通过代码判断数据库是否有效，然后决定回滚还是提交数据。</p>
+</li>
+<li><p>什么是SQL注入？<br>SQL注入就是通过把SQL命令插入到web表单提交或输入域名或页面请求的字符串，最终达到欺骗服务器恶意执行SQL命令。</p>
+</li>
+<li><p>索引是什么？有什么作用以及优缺点？<br>索引是对数据库表中一或多个列的值进行排序的结构，是帮助mysql高效获取数据的数据结构。在数据库中，索引允许数据程序迅速地找到表中的数据，而不必扫描整个数据。<br>索引加快数据库的检索速度。</p>
+</li>
+<li><p>脏读、不可重复读、幻读？<br>脏读：一个事务读取到另外一个事务未提交的数据。未提交意味着这些数据可能会回滚，也就是可能最终不会存到数据库中，即不存在的数据。读到了不一定最终的数据，就是脏读。<br>不可重复读：不可重复读指的是在同一事物内，不同时刻读到的同一批数据可能不一样，可能会受到其他事物的影响，比如其他事物改了这批数据提交。通常针对数据更新(UPDATE)操作。<br>幻读：在一个事务内读到别的事务插入的数据，导致前后读取不一致。</p>
+</li>
+<li><p>未读取授权、授权读取、可重复读、序列化？<br>未授权读取，也称为读未提交(Read Uncommitted)，在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。(可能发生脏读、不可重复读和幻读问题，一般很少用此隔离级别)<br>授权读取，也称为读已提交(Read Commited)，一个事务只能看到已经提交的数据。(读已提交级别解决了脏读的问题，但可能发生不可重读和幻读）<br>可重复读(Repeatable Read)，可重复读是指在一个事务内，最开始读到的数据和事务结束前任意时刻读到的数据是一致的。(解决了脏读和不可重复读的问题，但可能发生幻读)<br>序列化(Serializable)，提供严格的事务隔离。它要求事务序列化执行，事务只能一个接一个执行，不能并发执行。<br><strong>不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表。</strong><br>Mysql默认隔离级别: repeatable-read<br>Oracle默认为:read-committed</p>
+<table>
+<thead>
+<tr>
+<th align="center">隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">读未提交(Read Uncommitted)</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">读已提交(Read Committed)</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">可重复读(Repeatable Read)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">可串行化(Serializable)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>SQL Transaction[了解即可]?<br>1）Every SQL transaction should start with BEGIN TRANSACTION，BEGIN TRAN or BEGIN TRANSACTION trans_name<br>2）Every Transaction in SQL Server must end with either COMMIT or ROLLBACK statements.<br>3）COMMIT TRANSACTION: This statement tells the SQL to save the changes made between the BEGIN and COMMIT<br>4）ROLLBACK TRANSACTION tells the SQL to erase all the changes made between BEGIG and ROLLBACK</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckgupp25x0000r8wkhtieg800" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络面试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/">数据库面试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/">最大公约数和最小公倍数</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/">Python的一些知识点(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/31/About-hexo/">About hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
