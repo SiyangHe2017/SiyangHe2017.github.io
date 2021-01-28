@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>2021-01学习总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mkdir -p &#x2F;data&#x2F;PostgreSQL 里面的-p是什么意思?From this blog: -p: –parents:  no error if existing, make parent directories as needed  查看当前哪一个用户？whoami  su - user 和 su user 有什么区别？su - user切换到某个用户时环境变量也跟着改, su">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021-01学习总结">
+<meta property="og:url" content="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mkdir -p &#x2F;data&#x2F;PostgreSQL 里面的-p是什么意思?From this blog: -p: –parents:  no error if existing, make parent directories as needed  查看当前哪一个用户？whoami  su - user 和 su user 有什么区别？su - user切换到某个用户时环境变量也跟着改, su">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-27T07:27:45.000Z">
+<meta property="article:modified_time" content="2021-01-28T03:01:42.594Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2021-01学习总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-01-27T07:27:45.000Z" itemprop="datePublished">2021-01-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2021-01学习总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>mkdir -p /data/PostgreSQL 里面的-p是什么意思?<br>From this <a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/mkdir.1.html">blog</a>: -p: –parents:  no error if existing, make parent directories as needed</p>
+</li>
+<li><p>查看当前哪一个用户？<br>whoami</p>
+</li>
+<li><p>su - user 和 su user 有什么区别？<br>su - user切换到某个用户时环境变量也跟着改, su user 切换到某个用户环境变量不变</p>
+</li>
+<li><p>sudo  su - 是什么意思？<br>The command starts a login shell and you will find yourself in root’s home directory with root’s environment</p>
+</li>
+<li><p>chown -R postgres:postgres /data/PostgreSQL 是什么意思？<br>Linux chown(#chown user[:group] file)命令用于设置文件所有者和文件管理组的命令<br>其中-R 处理制定用户以及子目录的所有文件</p>
+</li>
+<li><p>pg_ctl 用于初始化PostgreSQL数据库集群。启动、停止，或者重启PostgreSQL后段服务器，或者显示一个运行着的服务器的状态<br>例: 启动postgresql服务器: pg_ctl -D /data/pgdata/ -l logfile start</p>
+</li>
+<li><p>PostgreSQL 一些操作<br>列出数据库名 \l<br>列出数据库 \c database_name<br>切换用户 \c - user_name<br>查询所有用户 \du</p>
+</li>
+<li><p>Postgresql大小写敏感？<br>In PostgreSQL unquoted names are case-sensitive, Thus SELECT * FROM hello and SELECT * FROM HELLO are equivalent.<br>However, quoted names are case-sensitive, SELECT * FROM “hello” is not equivalent to SELECT * FROM HELLO</p>
+</li>
+<li><p>聚合函数(例如max等)不能用于WHERE子句中, 存在这个限制是因为WHERE子句决定哪些行可以进入聚合状态，因此它必须在聚合函数之前计算</p>
+</li>
+<li><p>SQL注释操作？<br>单行注释： –<br>多行注释：/* */</p>
+</li>
+<li><p>一个事务所做的更新在它完成之前对于其他事物是不可见的，而之后的所有更新将同时变得可见.<br> The updates made so far by an open transaction are invisible to other transactions until the transaction completes, whereupon all the updates become visible simultaneously.</p>
+</li>
+</ol>
+<ol start="12">
+<li><p>/etc/passwd 文件包含了所有用户账户列表以及每个用户的基本信息<br>Eg: christine:x:501:501:Christine Berenahan:/home/christine:/bin/bash<br>最后一个字段/bin/bash指定了用户使用的shell程序</p>
+</li>
+<li><p>shell 提示符: ‘#’=root用户(超级管理员)</p>
+</li>
+<li><p>gsql -r 中的 -r 是什么意思？<br>If the paremeter is set, use libedit</p>
+</li>
+<li><p>setAutoCommit(True) 和 setAutoCommit(False)有什么区别？<br>默认的话为自动提交, 没执行一个update, delete 或者insert的时候都会自动提交数据库，无法回滚事务。<br>设置connection.setAutoCommit(false), 只有程序调用connection.commit()的时候才将先前执行的各语句一起提交到数据库; 或者先前执行各语句的一部分，然后就失败了，这时程序调用connection.rollBack()。这样就实现了事务数据库的回滚。</p>
+</li>
+<li><p>Java中的next()和nextLine()有什么区别？<br>1）next()以空格、回车、tab键当作结束, 而nextLine()仅仅以回车当作回车符<br>2）对于字符串头部的风格, next()自动忽略, 直到遇到有效的字符才读取; 而nextLine()会连着空格一块读取</p>
+</li>
+<li><p>String str = new String(“a”) 和 String str=”a” 有什么区别？<br>1）直接定义的String a = “a”中的”a”是储存在常量区的字符串常量池中。现在在常量池中查找有没有”a”。如果有，就让String a指向那一个，如果没有，就让String a指向在常量池中新建的对象”a”。new String(“a”)就是存储在堆中。<br>2）常量池中相同的字符只会有一个，但是new String()中每new一个对象就会在堆中新建一个对象，不管这个值是否相同。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="string">&quot;a&quot;</span>;</span><br><span class="line">String b = <span class="string">&quot;a&quot;</span>;</span><br><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">System.out.println(a==b);</span><br><span class="line">System.out.println(a.equals(b));</span><br><span class="line">System.out.println(str1==str2);</span><br><span class="line">System.out.println(str1.equals(str2));</span><br></pre></td></tr></table></figure>
+
+
+<ol start="18">
+<li><p>查看内存？<br>cat /proc/meminfo | grep MemTotal 或者 grep MemTotal /proc/meminfo</p>
+</li>
+<li><p>用户和用户组的概念和关系？<br>A）用户和用户组的概念:<br>与windows一样, linux下登录系统需要用户和密码, 一般有root超级用户的普通用户的区别, 其中root用户具有最高权限，并可以对普通用户进行秘密管理和权限分配。用户组是将不同用户的公共行为抽象形成一个组，只要是这个组的成员，都可以访问用户组所有的资源。<br>B）用户和用户组的关系:<br>一个用户对应于一个用户组<br>一个用户可以属于多个用户组，一个用户可以有多个用户<br>在linux下, /etc/passwd, /etc/shadow和/etc/group三个文件保存了用户和用户组的信息<br>创建用户账户是，系统会自动创建用户对应的主目录, 该目录默认放在/home目录下, 若要改变位置，可以利用-d参赛指定。对应用户登录时使用的shell, 默认为/bin/bash, 若要更改，则使用参数-s指定。<br>C）<br>I）添加组[每个用户都有用户组，系统可以对每个用户进行集中管理]:<br>groupadd -g 1099 postgres<br>II）添加用户:<br>useradd -g postgres -u 1009 -d /homepostgre -m postgres<br>[-g 用户组: 指定用户所属的附加组; -u 用户号:指定用户的用户号; -d 目录: 指定用户主目录, 如果此目录不存在，则使用-m选项, 则可以创建目录]<br>III）设置postgres用户的密码<br>(超级用户可以通过passwd username指定用户的口令)<br>passwd postgres</p>
+</li>
+<li><p>SUSE zypper 本地源配置<br>1）下载suse镜像文件并上传服务器(例/root)<br>2）创建一个空的目录(例/media)<br>3）执行如下命令进行挂载到本地目录 mount /root/xxxx.iso /media -o loop<br>4）进入/etc/zypp/repos.d 修改配置文件为baseurl=file:///media 或者直接在命令行输入zypper ar file:///media</p>
+</li>
+<li><p>什么是挂载？mount是用来干什么的？<br>来自这篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39521554/article/details/79501714">博客</a><br>1）提一句Windows下，mount挂载，就是给磁盘分区提供一个盘符（C,D,E,…）。比如插入U盘后系统自动分配给了它I:盘符其实就是挂载，退优盘的时候进行安全弹出，其实就是卸载unmount。<br>2）Linux下，不像Windows可以有C,D,E,多个目录，Linux只有一个根目录/。在装系统时，我们分配给linux的所有区都在/下的某个位置，比如/home等等。<br>3）提问者插入了新硬盘，分了新磁盘区sdb1。它现在还不属于/。<br>4）我们虽然可以在一些图形桌面系统里找到他的位置，浏览管理里面的文件，但在命令行却不知怎么访问它的目录，比如无法使用cd或者ls。也无法在编程时指定一个目录对它操作。<br>5）这时提问者使用了 mount /dev/sdb1 <del>/Share/ ，把新硬盘的区sdb1挂载到工作目录的</del>/Share/文件夹下，之后访问这个~/Share/文件夹就相当于访问这个硬盘2的sdb1分区了。对/Share/的任何操作，都相当于对sdb1里文件的操作。<br>6）所以Linux下，mount挂载的作用，就是<strong>将一个设备（通常是存储设备）挂接到一个已存在的目录上。</strong>访问这个目录就是访问该存储设备。<br>7）<strong>linux操作系统将所有的设备都看作文件，它将整个计算机的资源都整合成一个大的文件目录。</strong>我们要访问存储设备中的文件，必须将文件所在的分区挂载到一个已存在的目录上，然后通过访问这个目录来访问存储设备。挂载就是把设备放在一个目录下，让系统知道怎么管理这个设备里的文件，了解这个存储设备的可读写特性之类的过程。<br>8）我们不是有/dev/sdb1 吗，直接对它操作不就行了？这不是它的目录吗？<br>9）这不是它的目录。虽然/dev是个目录，但/dev/sdb1不是目录。可以发现ls/dev/sdb1无法执行。/dev/sdb1，是一个类似指针的东西，指向这个分区的原始数据块。mount前，系统并不知道这个数据块哪部分数据代表文件，如何对它们操作。<br>10）插入CD，系统其实自动执行了 mount /dev/cdrom /media/cdrom。所以可以直接在/media/cdrom中对CD中的内容进行管理。</p>
+</li>
+<li><p>mkdir() 和mkdirs()有什么区别？<br>From this <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9820088/difference-between-mkdir-and-mkdirs-in-java-for-java-io-file">blog</a><br>######javadocs for mkdirs():<br>Creates the directory named by this abstract pathname, including any necessary but nonexistent parent directories. Note that if this operation fails it may have succeeded in creating some of the necessary parent directories.<br>######javadocs for mkdir():<br>Creates the directory named by this abstract pathname.<br>Example:</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">&quot;non_existing_dir/someDir&quot;</span>);</span><br><span class="line">System.out.println(f.mkdir());</span><br><span class="line">System.out.println(f.mkdirs());</span><br></pre></td></tr></table></figure>
+<p>​     will yield false for the first [and no dir will be created], and true for the second, and you will have created non_existing_dir/someDir.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckkg9u7v100005fwkgqkm7s29" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据库面试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-01学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/">数据库面试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/">最大公约数和最小公倍数</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/">Python的一些知识点(1)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
