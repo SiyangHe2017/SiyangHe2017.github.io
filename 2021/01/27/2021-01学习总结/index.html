@@ -15,7 +15,7 @@
 <meta property="og:description" content="mkdir -p &#x2F;data&#x2F;PostgreSQL 里面的-p是什么意思?From this blog: -p: –parents:  no error if existing, make parent directories as needed  查看当前哪一个用户？whoami  su - user 和 su user 有什么区别？su - user切换到某个用户时环境变量也跟着改, su">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-27T07:27:45.000Z">
-<meta property="article:modified_time" content="2021-01-28T06:05:29.109Z">
+<meta property="article:modified_time" content="2021-02-05T06:41:03.066Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -133,7 +133,7 @@
 <li>查看内存？<br>cat /proc/meminfo | grep MemTotal 或者 grep MemTotal /proc/meminfo</li>
 </ol>
 <ol start="19">
-<li><p>用户和用户组的概念和关系？<br><strong>A）用户和用户组的概念</strong>:<br>与windows一样, linux下登录系统需要用户和密码, 一般有root超级用户的普通用户的区别, 其中root用户具有最高权限，并可以对普通用户进行秘密管理和权限分配。用户组是将不同用户的公共行为抽象形成一个组，只要是这个组的成员，都可以访问用户组所有的资源。<br><strong>B）用户和用户组的关系</strong>:<br>一个用户对应于一个用户组<br>一个用户可以属于多个用户组，一个用户可以有多个用户<br>在linux下, /etc/passwd, /etc/shadow和/etc/group三个文件保存了用户和用户组的信息<br>创建用户账户是，系统会自动创建用户对应的主目录, 该目录默认放在/home目录下, 若要改变位置，可以利用-d参赛指定。对应用户登录时使用的shell, 默认为/bin/bash, 若要更改，则使用参数-s指定。<br><strong>C）Example</strong>:<br>I）添加组[每个用户都有用户组，系统可以对每个用户进行集中管理]:<br>groupadd -g 1099 postgres<br>II）添加用户:<br>useradd -g postgres -u 1009 -d /homepostgre -m postgres<br>[-g 用户组: 指定用户所属的附加组; -u 用户号:指定用户的用户号; -d 目录: 指定用户主目录, 如果此目录不存在，则使用-m选项, 则可以创建目录]<br>III）设置postgres用户的密码<br>(超级用户可以通过passwd username指定用户的口令)<br>passwd postgres</p>
+<li><p>用户和用户组的概念和关系？<br><strong>A）用户和用户组的概念</strong>:<br>与windows一样, linux下登录系统需要用户和密码, 一般有root超级用户的普通用户的区别, 其中root用户具有最高权限，并可以对普通用户进行秘密管理和权限分配。用户组是将不同用户的公共行为抽象形成一个组，只要是这个组的成员，都可以访问用户组所有的资源。<br><strong>B）用户和用户组的关系</strong>:<br>一个用户对应于一个用户组<br>一个用户可以属于多个用户组，一个用户可以有多个用户<br>在linux下, /etc/passwd, /etc/shadow和/etc/group三个文件保存了用户和用户组的信息<br>创建用户账户是，系统会自动创建用户对应的主目录, 该目录默认放在/home目录下, 若要改变位置，可以利用-d参赛指定。对应用户登录时使用的shell, 默认为/bin/bash, 若要更改，则使用参数-s指定。<br><strong>C）Example</strong>:<br>I）添加组[每个用户都有用户组，系统可以对每个用户进行集中管理]:<br>groupadd -g 1099 postgres<br>II）添加用户:<br>useradd -g postgres -u 1009 -d /home/postgre -m postgres<br>[-g 用户组: 指定用户所属的附加组; -u 用户号:指定用户的用户号; -d 目录: 指定用户主目录, 如果此目录不存在，则使用-m选项, 则可以创建目录]<br>III）设置postgres用户的密码<br>(超级用户可以通过passwd username指定用户的口令)<br>passwd postgres</p>
 </li>
 <li><p>SUSE zypper 本地源配置<br>1）下载suse镜像文件并上传服务器(例/root)<br>2）创建一个空的目录(例/media)<br>3）执行如下命令进行挂载到本地目录 mount /root/xxxx.iso /media -o loop<br>4）进入/etc/zypp/repos.d 修改配置文件为baseurl=file:///media 或者直接在命令行输入zypper ar file:///media</p>
 </li>
@@ -148,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckkggej3f00001dwk74ym3077" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckkrx8d8e0000kgwk8eep2myh" class="article-share-link">Share</a>
       
       
     </footer>
