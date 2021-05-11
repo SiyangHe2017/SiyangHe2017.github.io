@@ -64,6 +64,89 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2021-03学习总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-05-11T08:22:58.000Z" itemprop="datePublished">2021-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-03学习总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>tar解压：<br>tar -xvf filename.tar<br>tar -zxvf filename.tar.gz<br>-x: extract files from an archive<br>-v: verbosely list file processed<br>-z: filter the archive throught gzip<br>-f: use archive file or device ARCHIVE</p>
+</li>
+<li><p>如何修改linux密码？<br>passwd</p>
+</li>
+<li><p>CREATE USER ‘user’ IDENTIFIED BY ‘123456’:<br>创建用户名为user, 密码为123456的用户 </p>
+</li>
+<li><p>grant 授予用户权限<br>参考这篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/anzhen0429/article/details/78296814">博客</a><br>mysql&gt; grant all privileges on <em>.</em> to ‘yangxin’@’%’ identified by ‘yangxin123456’ with grant option;<br>all privileges：表示将所有权限授予给用户。也可指定具体的权限，如：SELECT、CREATE、DROP等。<br>on：表示这些权限对哪些数据库和表生效，格式：数据库名.表名，这里写 * 表示所有数据库，所有表。如果我要指定将权限应用到test库的user表中，可以这么写：test.user<br>to：将权限授予哪个用户。格式：“用户名”@“登录IP或域名”。%表示没有限制，在任何主机都可以登录。比如：”yangxin”@”192.168.0.%”，表示yangxin这个用户只能在192.168.0IP段登录<br>identified by：指定用户的登录密码<br>with grant option：表示允许用户将自己的权限授权给其它用户</p>
+</li>
+<li><p>Mysql查询用户表？<br>SELECT User, Host, Password FROM mysql.user;</p>
+</li>
+<li><p>echo -n中的-n是什么意思？<br>-n: do not output the trailing newline</p>
+</li>
+<li><p>Linux下用base64加密解密字符串<br>加密:<br>$echo Hello World | base64<br>SGVsbG8gV29ybGQK</p>
+<p>解密:<br>$ echo SGVsbG8gV29ybGQK | base64 -d<br>Hello World</p>
+</li>
+<li><p>linux终端下的export: export 的效力仅限于该次登陆操作 </p>
+</li>
+<li><p>开发环境、生产环境和测试环境？<br>项目部署环境一般可分为三种: 生产环境，测试环境，开发环境<br>开发环境：开发环境时程序猿们专门用于开发的服务器，配置可以比较随意，为了开发调试方便，一般打开全部错误报告和测试工具，是最基础的环境。开发环境的分支，一般是feature分支。<br>测试环境：一般是克隆一份生产环境的配置，一个程序在测试环境工作不正常，那么肯定不能把它发布到生产服务器上，是开发环境到生产环境的过度环境。测试环境的分支一般是develop分支，部署到公司私有的服务器或者局域网服务器上，主要用于测试是否存在bug，一般会不让用户和其他人看到，并且测试环境会尽量与生产环境相似。<br>生产环境： 生产环境是指正式提供对外服务的，一般会关掉错误报告，打开错误日志，是最重要的环境。部署分支一般为master分支。<br>三个环境也可以说是系统开发的三个阶段：开发-&gt;测试-&gt;上线，其中生产环境也就是投产说的真实的环境，最后交给用户的环境。</p>
+</li>
+<li><p>导入maven的project？<br>直接导入project的pom.xml文件</p>
+</li>
+<li><p>maven中groupID和artifactID分别是什么意思？<br>groupID: 代表组织和整个项目的唯一标志，比如说所有的Maven组件的groupID都是org.apache.maven。<br>artifactID: 具体项目的名称，它与groupID共同确定一个项目在maven repo中的位置，例如，groupId=org.codehaus.mojo, artifactId=my-project的项目，在maven repo中的位置为：$M2_REPO/org/codehaus/mojo/my-project。<br>version: 用于说明目前项目的版本，在引用依赖的时候确定具体依赖的版本号。<br>packaging: 规定项目的输出格式，包括jar、war、pom、apk等，根据实际需要确定。例如，开发一般的java库，可以使用jar packaging；开发android则是apk packaging。</p>
+<p>或者这样理解，<br>groupId<br>定义了项目属于哪个组，举个例子，如果你的公司是mycom，有一个项目为myapp，那么groupId就应该是com.mycom.myapp.<br>artifactId<br>定义了当前maven项目在组中唯一的ID,比如，myapp-util,myapp-domain,myapp-web等。<br>version<br>指定了myapp项目的当前版本，SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定的版本。</p>
+</li>
+<li><p>IDEA maven配置？<br>来源于<a target="_blank" rel="noopener" href="https://www.timbotetsu.com/blog/intellij-ideali-mavende-faq/">博客</a>:<br>Maven home directory: Maven的主目录(就是maven下载的地址: the maven home directory is the one maven is installed to)<br>User settings file：用户设置配置文件<br>Local repository：本地仓库(也就是Jar包)存放路径<br>本地仓库 –&gt; 私服 –&gt; 中央仓库</p>
+</li>
+<li><p>Mysql是用AUTO_INCREMENT来标识字段的自增<br>PostgreSQL使用序列来标识字段的自增长</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> runoob</span><br><span class="line">(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">serial</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    alttext <span class="built_in">text</span>,</span><br><span class="line">    imgurl <span class="built_in">text</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Give all permision to a user on a PostgreSQL database:<br>参考这篇<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22483555/give-all-permissions-to-a-user-on-a-postgresql-database">stackoverflow</a><br>GRANT ALL PRIVILEGES ON DATABASE “my_db” to my_user;</p>
+</li>
+<li><p>create database if not exist database_name目前在高斯数据库中不可用实现 </p>
+</li>
+<li><p>在高斯数据库中create table  table_name(…)中会默认创建在以当前用户为名的schema中，如果没有当前用户为名的schema就会创建在名为public的schema中。</p>
+</li>
+<li><p>create table tablename优先级: 用户名所在的schema –&gt; 名为public的schema<br>select * from tablename优先级: pg_catalog –&gt; 用户名所在的schema –&gt; 名为public的schema</p>
+</li>
+<li><p>executeUpdate和executeQuery有什么区别？<br>参考这篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012501054/article/details/80323176">blog</a>, executeQuery用于产生ResultSet语句, 例如: 被执行最多的select语句。 这个方法被用来执行查询语句，执行后返回代表查询结果的ResultSet对象。executeUpdate用于执行insert, update或delete语句以及SQL DDL语句，例如CREATE TABLE和DROP TABLE。<br>INSERT、UPDATE或DELETE语句的效果是修改表中零行或多行中的一列或多列。<br>executeUpdate的返回值是一个整数(int)。</p>
+</li>
+<li><p>什么是两地三中心？<br>两地三中心顾名思义，两个地方，三个中心的意思是：生产中心、同城容灾中心、异地容灾中心。从意义上来看就是，兼具同城容灾和异地容灾，结合起来就叫<a href="https://link.zhihu.com/?target=https://www.idcicp.cn/solution/dr.html">两地三中心</a>。<strong>第一步：同城双中心</strong>，是指在同城或邻近城市建立两个可独立承担关键系统运行的数据中心，双中心具备基本等同的业务处理能力并通过高速链路实时同步数据，日常情况下可同时分担业务及管理系统的运行，并可切换运行；灾难情况下可在基本不丢失数据的情况下进行灾备应急切换，保持业务连续运行。<strong>第二步：异地灾备中心</strong>是指在异地的城市建立一个备份的灾备中心，用于双中心的数据备份，当双中心出现自然灾害等原因而发生故障时，异地灾备中心可以用备份数据进行业务的恢复。<br>和同城双活的区别就是，两地三中心比同城双活多了一个异地数据中心。这个异地数据中心主要用于规避大自然灾害发生时，异地的数据中心能够立即启动，保障业务和数据最大限度不受影响，仍能够正常运行，将企业因大自然灾害受到的损失减到最小。</p>
+</li>
+<li><p>postgresql中什么是oid?<br>来自这篇<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/12/datatype-oid.html#DATATYPE-OID-TABLE">文档</a>:<br>Object identifiers (OIDs) are used internally by PostgreSQL as primary keys for various system tables. Type <code>oid</code> represents an object identifier. There are also several alias types for <code>oid</code>: <code>regproc</code>, <code>regprocedure</code>, <code>regoper</code>, <code>regoperator</code>, <code>regclass</code>, <code>regtype</code>, <code>regrole</code>, <code>regnamespace</code>, <code>regconfig</code>, and <code>regdictionary</code>. <a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/12/datatype-oid.html#DATATYPE-OID-TABLE">Table 8.26</a> shows an overview.<br>The <code>oid</code> type is currently implemented as an unsigned four-byte integer(也就是int类型). Therefore, it is not large enough to provide database-wide uniqueness in large databases, or even in large individual tables.</p>
+</li>
+<li><p>如何查看guassdb中一个视图中所有表的字段属性？<br>来自于这篇<a target="_blank" rel="noopener" href="https://dba.stackexchange.com/questions/29901/query-to-identify-all-data-types-used-in-postgresql-database-tables">stackoverflow</a> </p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> data_type, <span class="keyword">count</span>(*) </span><br><span class="line"><span class="keyword">from</span> information_schema.columns </span><br><span class="line"><span class="keyword">where</span> table_schema = <span class="string">&#x27;public&#x27;</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> data_type ;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojs3y3f0001zzwk2fta4y9c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2021-01学习总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
@@ -146,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckkrx8d8e0000kgwk8eep2myh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojs3y3b0000zzwk0pw79pfl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckkrx8d8z0004kgwk1q9g5oet" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckojs3y3i0005zzwk4yys11dj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckkrx8d940006kgwk6ti5c9w5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckojs3y3l0007zzwkcvwfegot" class="article-share-link">Share</a>
       
       
     </footer>
@@ -378,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckkrx8d910005kgwkea1e0e82" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckojs3y3j0006zzwkdfzt48xz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -494,7 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckkrx8d8w0002kgwka7vpfrmk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckojs3y3h0003zzwkengj064w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +620,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckkrx8d8u0001kgwk9uvbcx7c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckojs3y3g0002zzwk6op8997o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -586,7 +669,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckkrx8d8x0003kgwken6w0gx8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckojs3y3i0004zzwk8f2m7r29" class="article-share-link">Share</a>
       
       
     </footer>
@@ -614,7 +697,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -625,6 +708,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-03学习总结</a>
+          </li>
         
           <li>
             <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-01学习总结</a>
@@ -640,10 +727,6 @@
         
           <li>
             <a href="/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/">最大公约数和最小公倍数</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/">Python的一些知识点(1)</a>
           </li>
         
       </ul>
