@@ -131,13 +131,18 @@
 <li><p>postgresql中什么是oid?<br>来自这篇<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/12/datatype-oid.html#DATATYPE-OID-TABLE">文档</a>:<br>Object identifiers (OIDs) are used internally by PostgreSQL as primary keys for various system tables. Type <code>oid</code> represents an object identifier. There are also several alias types for <code>oid</code>: <code>regproc</code>, <code>regprocedure</code>, <code>regoper</code>, <code>regoperator</code>, <code>regclass</code>, <code>regtype</code>, <code>regrole</code>, <code>regnamespace</code>, <code>regconfig</code>, and <code>regdictionary</code>. <a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/12/datatype-oid.html#DATATYPE-OID-TABLE">Table 8.26</a> shows an overview.<br>The <code>oid</code> type is currently implemented as an unsigned four-byte integer(也就是int类型). Therefore, it is not large enough to provide database-wide uniqueness in large databases, or even in large individual tables.</p>
 </li>
 <li><p>如何查看guassdb中一个视图中所有表的字段属性？<br>来自于这篇<a target="_blank" rel="noopener" href="https://dba.stackexchange.com/questions/29901/query-to-identify-all-data-types-used-in-postgresql-database-tables">stackoverflow</a> </p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> data_type, <span class="keyword">count</span>(*) </span><br><span class="line"><span class="keyword">from</span> information_schema.columns </span><br><span class="line"><span class="keyword">where</span> table_schema = <span class="string">&#x27;public&#x27;</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> data_type ;</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> data_type, <span class="keyword">count</span>(*) </span><br><span class="line"><span class="keyword">from</span> information_schema.columns </span><br><span class="line"><span class="keyword">where</span> table_schema = <span class="string">&#x27;public&#x27;</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> data_type ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ps -ef是什么意思？<br>To see every process on the system<br>-f: do format listing<br>-e: select all process<br>ps(process status): report a snapshot of the current status</p>
+</li>
+<li><p>What is the meaning of instances and schemas of DBs?<br>Instances of DBs: The collection of data stored in the DB at a particular moment is called an instance of the DB<br>Schemas of DBs: The overall design/description of the DB is called the DB schema </p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojs3y3f0001zzwk2fta4y9c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojsnf0d00015bwkca1q82sr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojs3y3b0000zzwk0pw79pfl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojsnf0100005bwk923018g1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckojs3y3i0005zzwk4yys11dj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckojsnf0i00065bwk99y715qb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -420,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckojs3y3l0007zzwkcvwfegot" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckojsnf0k00075bwkbe4fgs43" class="article-share-link">Share</a>
       
       
     </footer>
@@ -461,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckojs3y3j0006zzwkdfzt48xz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckojsnf0h00055bwkhc1l210i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -577,7 +582,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckojs3y3h0003zzwkengj064w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckojsnf0f00035bwka6jmawkl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -620,7 +625,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckojs3y3g0002zzwk6op8997o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckojsnf0e00025bwkbtsp7p77" class="article-share-link">Share</a>
       
       
     </footer>
@@ -669,7 +674,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckojs3y3i0004zzwk8f2m7r29" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckojsnf0g00045bwkdyhlb5cn" class="article-share-link">Share</a>
       
       
     </footer>
