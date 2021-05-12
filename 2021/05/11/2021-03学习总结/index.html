@@ -15,7 +15,7 @@
 <meta property="og:description" content="tar解压：tar -xvf filename.tartar -zxvf filename.tar.gz-x: extract files from an archive-v: verbosely list file processed-z: filter the archive throught gzip-f: use archive file or device ARCHIVE  如何修改l">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-11T08:22:58.000Z">
-<meta property="article:modified_time" content="2021-05-11T08:50:18.093Z">
+<meta property="article:modified_time" content="2021-05-12T01:49:19.157Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -139,12 +139,24 @@
 </li>
 <li><p>What is the meaning of instances and schemas of DBs?<br>Instances of DBs: The collection of data stored in the DB at a particular moment is called an instance of the DB<br>Schemas of DBs: The overall design/description of the DB is called the DB schema </p>
 </li>
+<li><p>Springboot逻辑框架<br>src/main/java 程序开发以主入口<br>src/main/resources 配置文件<br>src/test/java 测试程序<br>Application.java 建议放到根目录下面<br>model目录主要用于实体与数据访问层<br>service层主要是业务类代码<br>controller负责页面访问控制    </p>
+</li>
+<li><p>@Controller 和 @RestController有什么区别？<br>@Controller is used to mark classes as Spring MVC Controller<br>@RestController is a convenience annotaion that does nothing more than add the @Controller and @ResponseBody annotations </p>
+<p>So the following two controller definitions should do the same</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@Responsebody</span></span><br><span class="line"><span class="function">Public class <span class="title">MyController</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="function">Public class <span class="title">MyController</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>@Responsebody是什么？<br>@ResponseBody annotation can be put on a method and indicates that hte return type should be written straight to HTTP response body(and not placed in a Model, or interpreted as a view name)</p>
+</li>
+<li><p>@ResponseBody和@RestController需要注意的地方:<br>@ResponseBody，一般是使用在单独的方法上的，需要哪个方法返回json数据格式，就在哪个方法上使用，具有针对性。<br>@RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解。<br>需要注意的是，使用了@RestController注解之后，其本质相当于在该类的所有方法上统一使用了@ResponseBody注解，所以该类下的所有方法都会返回json数据格式。</p>
+</li>
+<li><p>controller的用法？<br>参照这几篇博客: <a target="_blank" rel="noopener" href="https://blog.mythsman.com/post/5d2b5e9025601931a5f8d877/#:~:text=Controller%E6%98%AFSpringBoot%E9%87%8C%E6%9C%80,%E7%BB%99%E4%B8%8D%E5%90%8C%E7%9A%84%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E3%80%82">博客1</a> 和 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangpower1993/article/details/81878773">博客2</a><br>处理http请求的，告知spring这是一个控制器<br>Controller是SpringBoot里最基本的组件，他的作用是把用户提交来的请求通过对URL的匹配，分配给不同的接收器，再进行处理，然后向用户返回结果。他的重点就在于如何从HTTP请求中获得信息，提取参数，并分发给不同的处理服务。</p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckojsnnt600016rwkf5nn47lh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckoktmglw0002snwk6yp631v2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,6 +164,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          springboot简介
+        
+      </div>
+    </a>
   
   
     <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
@@ -193,6 +214,10 @@
       <ul>
         
           <li>
+            <a href="/2021/05/12/springboot%E7%AE%80%E4%BB%8B/">springboot简介</a>
+          </li>
+        
+          <li>
             <a href="/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-03学习总结</a>
           </li>
         
@@ -206,10 +231,6 @@
         
           <li>
             <a href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/">计算机网络面试</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/">最大公约数和最小公倍数</a>
           </li>
         
       </ul>
