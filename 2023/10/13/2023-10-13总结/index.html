@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>2023-10-13总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在 IntelliJ IDEA 中，Maven Home Path、User Setting File 和 Local Repository有什么区别？1）Maven Home Path 是 Maven 安装的位置，它包含了 Maven 的二进制文件、库和其他的必要资源。该路径应该指向 Maven 安装的根目录，而不是 bin 目录。Maven Home Path 是 Maven 运行所需的基本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023-10-13总结">
+<meta property="og:url" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在 IntelliJ IDEA 中，Maven Home Path、User Setting File 和 Local Repository有什么区别？1）Maven Home Path 是 Maven 安装的位置，它包含了 Maven 的二进制文件、库和其他的必要资源。该路径应该指向 Maven 安装的根目录，而不是 bin 目录。Maven Home Path 是 Maven 运行所需的基本">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png">
+<meta property="og:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png">
+<meta property="article:published_time" content="2023-10-13T12:10:59.000Z">
+<meta property="article:modified_time" content="2023-10-13T13:22:41.394Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2023-10-13总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2023-10-13T12:10:59.000Z" itemprop="datePublished">2023-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2023-10-13总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>在 IntelliJ IDEA 中，Maven Home Path、User Setting File 和 Local Repository有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png" alt="maven_setting"><br>1）Maven Home Path 是 Maven 安装的位置，它包含了 Maven 的二进制文件、库和其他的必要资源。该路径应该指向 Maven 安装的根目录，而不是 bin 目录。Maven Home Path 是 Maven 运行所需的基本配置，它告诉 IntelliJ IDEA 在哪里可以找到 Maven 的执行文件。<br>2）User Setting File:<br>User Setting File 是一个 XML 文件，通常名为 settings.xml，它包含了 Maven 的配置信息。这个文件通常包含了代理设置、镜像仓库配置、服务器认证信息等。通常情况下，这个文件位于 Maven 安装目录下的 conf 目录中，或者在用户的 home 目录中的 .m2 目录下。<br>3）Local Repository:<br>Local Repository 是本地的 Maven 仓库，它存储了所有的项目依赖和插件。当 Maven 需要一个特定的库或插件时，它会首先在本地仓库中查找。如果在本地仓库中找不到所需的库或插件，Maven 会尝试从中央仓库或配置的其他远程仓库下载。默认情况下，本地仓库位于用户的 home 目录中的 .m2/repository 目录下。</p>
+</li>
+<li><p>如上图所示，intellij maven设置里面的 use settings from .mvn/maven.config是什么意思？<br>在 IntelliJ IDEA 中，Maven 设置中的 “Use settings from .mvn/maven-config” 选项允许你指定一个特定的配置文件，该文件应包含 Maven 构建过程中所需的自定义设置和选项。这个配置文件通常位于你的项目目录中的 .mvn 文件夹内，并且命名为 maven.config。<br>下面是一些详细的解释：<br>mvn文件夹：mvn文件夹是一个可选的、位于项目根目录的文件夹，它可以包含一个或多个 Maven 配置文件。这个文件夹使得你可以为特定的 Maven 项目提供自定义的配置，而不是依赖于全局或用户级别的 Maven 配置。<br>maven.config 文件：maven.config 文件是一个简单的文本文件，它可以包含一系列的命令行选项，每个选项占一行。这些选项在执行 Maven 命令时将被使用，就好像它们是在命令行上指定的一样。<br>这个选项的一个常见用例是，如果你有一些特定的 Maven 插件或其他配置，它们应该只对当前项目有效，而不应该影响到其他 Maven 项目，那么你就可以使用 .mvn/maven.config 文件来指定这些设置。<br>通过启用 “Use settings from .mvn/maven.config” 选项，你告诉 IntelliJ IDEA 在处理 Maven 构建时应该考虑这个文件中的设置。<br>例如，你的 maven.config 文件可能包含以下内容，以指定一个特定的 Maven 插件版本和一些自定义的构建选项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-P profile-name</span><br><span class="line">-DskipTests</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>在 IntelliJ IDEA 中，当你配置 Maven 时，会看到 “Bundled (Maven 3)” 和 “Use Maven Wrapper” 两个选项。这两个选项有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png" alt="maven_setting"><br>1）Bundled (Maven 3)：”Bundled (Maven 3)” 意味着使用 IntelliJ IDEA 自带的 Maven 版本。这是一个内置于 IntelliJ IDEA 中的 Maven 版本，通常是 Maven 3 的一个版本。选择此选项意味着你不需要在本地机器上单独安装 Maven，因为 IntelliJ IDEA 已经为你提供了一个 Maven 版本。这个选项对于初学者和那些不想在自己的机器上管理 Maven 安装的用户来说是一个好选择。<br>2）Use Maven Wrapper：Maven Wrapper 是一个为 Maven 项目提供了一个可携带的构建系统的工具。通过使用 Maven Wrapper，你可以确保所有的构建都使用相同版本的 Maven，无论在哪个机器上执行构建。当你选择 “Use Maven Wrapper” 时，你的项目将使用一个名为 mvnw 的脚本来运行 Maven，而不是使用系统路径中的 mvn 命令。Maven Wrapper 脚本会检查是否已经下载了正确版本的 Maven，如果没有，它会从网上下载正确版本的 Maven 并在本地缓存，然后使用它来执行构建。这个选项对于团队工作和确保构建一致性非常有用，尤其是当不同的机器上可能有不同版本的 Maven时。</p>
+</li>
+<li><p>JAVA_HOME环境变量和Path环境变量有什么区别？<br>1）JAVA_HOME 环境变量：<br>JAVA_HOME 环境变量通常用于指定 JDK 的安装目录。它是许多 Java 应用和系统工具识别 JDK 安装位置的方式。例如，一些 Java 应用服务器和开发工具可能需要 JAVA_HOME 环境变量来找到 JDK。<br>2）Path 环境变量：<br>Path 环境变量是操作系统用来查找可执行文件的目录列表。当你在命令行中输入一个命令时，操作系统会在 Path 环境变量指定的目录列表中查找该命令的可执行文件。通过将 JDK 的 bin 目录添加到 Path 环境变量中，你可以确保操作系统能够找到 Java 编译器 (javac) 和 Java 运行时 (java) 等基本的 Java 命令。<br>当你安装JDK时，通常需要同时设置JAVA_HOME和Path环境变量，以确保：其他应用能通过 JAVA_HOME找到JDK。你能在命令行中直接运行 Java 相关的命令，如java和javac，而无需指定它们的完整路径。</p>
+</li>
+<li><p>程序运行时出现”this is incompatible with sql_mode=only_full_group”是什么原因？<br>出现错误 “this is incompatible with sql_mode=only_full_group_by” 通常是因为 MySQL 服务器配置的 sql_mode 设置中包含了 ONLY_FULL_GROUP_BY，而你的查询没有遵守该模式的要求。ONLY_FULL_GROUP_BY 模式的目的是遵守 SQL 的标准规则，确保 GROUP BY 子句中列出的所有列都出现在选择列表中，或者与聚合函数一起使用。<br>1）可以通过<code>SELECT @@sql_mode</code>查询当前会话的sql_mode模式。<br>2）ONLY_FULL_GROUP_BY 是 MySQL 的一个 sql_mode 设置，它强制要求在使用 GROUP BY 语句时，所有在 SELECT 子句中列出的非聚合列必须在 GROUP BY 子句中明确指定。这样做是为了保证结果的确定性，避免返回意外或不确定的结果。<br>下面通过两个例子来解释这个模式的作用和意义。<br>例子1: 符合 ONLY_FULL_GROUP_BY 规则的查询<br>假设我们有一个名为 sales 的表，它有两个列 region 和 amount。我们想知道每个区域的销售总额。以下查询符合 ONLY_FULL_GROUP_BY 规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT region, SUM(amount)</span><br><span class="line">FROM sales</span><br><span class="line">GROUP BY region;</span><br></pre></td></tr></table></figure>
+<p>在这个查询中，我们在 SELECT 子句中列出了 region 列，并在 GROUP BY 子句中明确指定了 region 列。这符合 ONLY_FULL_GROUP_BY 规则。<br>例子2: 不符合 ONLY_FULL_GROUP_BY 规则的查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT region, amount</span><br><span class="line">FROM sales</span><br><span class="line">GROUP BY region;</span><br></pre></td></tr></table></figure>
+<p>在这个查询中，我们在 SELECT 子句中列出了 region 和 amount 列，但在 GROUP BY 子句中只指定了 region 列。由于 amount 列没有在 GROUP BY 子句中列出，也没有与任何聚合函数一起使用，这个查询不符合 ONLY_FULL_GROUP_BY 规则，如果 ONLY_FULL_GROUP_BY 模式是启用的，MySQL 会返回一个错误。<br>这个模式的目的是确保每个 GROUP BY 查询的结果都是确定的和可重复的，避免因为遗漏 GROUP BY 中的列而导致不确定的结果。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clnon4r990000q6wk41hs4bci" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">springboot简介</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/">2023-10-13总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/12/springboot%E7%AE%80%E4%BB%8B/">springboot简介</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-03学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-01学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/">数据库面试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
