@@ -64,6 +64,100 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Mock学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2023-11-16T09:04:34.000Z" itemprop="datePublished">2023-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/">Mock学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>@Runwith是什么意思？<br>@RunWith是Java 中 JUnit 测试框架的一个注解。它用于指定一个测试运行器（Test Runner），这个测试运行器负责执行测试用例并生成测试结果。在 JUnit 4 中，@RunWith 常用于指定不同类型的测试运行器，比如用于单元测试、参数化测试或者集成测试。<br>例如，在使用 Spring 框架进行单元测试时，你可能会看到这样的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringJUnit4ClassRunner.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestClass</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 测试方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，@RunWith(SpringJUnit4ClassRunner.class)告诉JUnit使用Spring的测试运行器来执行这个类中的测试方法。这使得测试类可以利用Spring框架的功能，比如依赖注入和事务管理。</p>
+</li>
+<li><p>@PrepareForTest是什么意思？<br>@PrepareForTest是由Mockito的一个扩展库PowerMock提供的注解。PowerMock是一个用于扩展Mockito功能的库，它允许你模拟构造函数、静态方法和私有方法等，这些通常是 Mockito无法直接模拟的。<br>使用@PrepareForTest注解是为了指示PowerMock准备某些类以便进行测试，这些类将会涉及到静态方法的模拟、私有方法的模拟、final 方法的模拟、构造函数的模拟，或者是对系统类的模拟等情况。<br>当你使用@PrepareForTest时，你需要传递一个类或类的数组给这个注解，告诉PowerMock 需要重写和准备这些类中的静态和私有方法，以便可以对它们进行模拟。</p>
+</li>
+<li><p>在Mockito测试框架中，@InjectMock和@Mock分别代表什么意思？<br>可以从Mock和InjectMock的英文意思了解，mock的意思是模仿，inject的意思是注射/注入。<br>因此，@Mock会创建一个mock对象。这个对象会模仿真实对象的行为，但实际上并不执行真正的逻辑。@InjectMock会创建一个实例，并自动将标记为 @Mock 的mock对象注入到该实例中。</p>
+<table>
+<thead>
+<tr>
+<th>@Mock</th>
+<th align="center">@InjectMock</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Mock creates a mock</td>
+<td align="center">@InjectMocks creates an instance of the class and injects the mocks that are created with the @Mock annotations into this instance</td>
+</tr>
+<tr>
+<td>@Mock is used to create mocks that are needed to support the testing of the class to be tested</td>
+<td align="center">@InjectMocks is used to create class instances that need to be tested in the test class.</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Book <span class="title">getBookById</span><span class="params">(String id)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Normally, this method might fetch a book from the database.</span></span><br><span class="line">        <span class="comment">// ... (some logic)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Book(id, <span class="string">&quot;Sample Book&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> BookService bookService;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OrderService</span><span class="params">(BookService bookService)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.bookService = bookService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">orderBook</span><span class="params">(String bookId)</span> </span>&#123;</span><br><span class="line">        Book book = bookService.getBookById(bookId);</span><br><span class="line">        <span class="comment">// ... (some logic to order the book)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Ordered: &quot;</span> + book.getName();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>举个例子: 假设你正在开发一个在线书店。在书店中，有一个 BookService 用来处理与书相关的各种事务。此外，还有一个 OrderService，当用户想购买一本书时，它会与 BookService 交互。<br>现在，你想为 OrderService 编写一个单元测试，但不想实际调用 BookService（也许因为它涉及到数据库调用或其他外部服务）。这就是 @Mock 和 @InjectMocks 登场的地方。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(MockitoJUnitRunner.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderServiceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Mock</span></span><br><span class="line">    <span class="keyword">private</span> BookService bookService;  <span class="comment">// This creates a mock (fake) version of BookService</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@InjectMocks</span></span><br><span class="line">    <span class="keyword">private</span> OrderService orderService;  <span class="comment">// This tells Mockito to use the mock BookService in OrderService</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOrderBook</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Setting up the mock behavior</span></span><br><span class="line">        when(bookService.getBookById(<span class="string">&quot;123&quot;</span>)).thenReturn(<span class="keyword">new</span> Book(<span class="string">&quot;123&quot;</span>, <span class="string">&quot;Mocked Book&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Test the orderBook method</span></span><br><span class="line">        String result = orderService.orderBook(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        assertEquals(<span class="string">&quot;Ordered: Mocked Book&quot;</span>, result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个示例中:<br>@Mock 用于创建一个模拟的 BookService。这意味着当你调用这个模拟的 bookService.getBookById 时，你可以设定它返回你想要的任何内容（在这个例子中，我们让它返回一个叫做 “Mocked Book” 的书）。<br>@InjectMocks 用于在 OrderService 中自动注入模拟的 BookService。这意味着当你在测试中调用 orderService.orderBook 时，它实际上使用的是模拟的 BookService，而不是真实的服务。<br>总的来说，<strong>在Mockito测试框架中, @Mock 用于创建模拟对象，而 @InjectMocks 用于将这些模拟对象自动注入到要测试的类中。</strong></p>
+</li>
+<li><p>mockito.verify()语法是什么意思？<br>a. 基本用法：确认模拟对象的某个方法是否被调用。<code>Mockito.verify(mockObject).someMethod();</code><br>b. 确认方法被调用的次数。<br><code>Mockito.verify(mockObject, Mockito.times(2)).someMethod();</code><br>c. 确认方法从未被调用。<br><code>javaMockito.verify(mockObject, Mockito.never()).someMethod();</code></p>
+</li>
+<li><p>Junit中的<code>@Before</code>是什么意思？<br><code>@Before</code> 是JUnit 4中的一个注解，它用于标记一个在每个测试方法之前自动执行的方法。这个注解通常用于设置测试环境，例如初始化共享资源、配置模拟对象或设置测试数据。使用 <code>@Before</code> 确保在运行任何测试方法之前，所需的初始化代码都已执行。<br>例如，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> SomeResource resource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">        resource = <span class="keyword">new</span> SomeResource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 使用 resource</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 使用 resource</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，setUp 方法被标记为 <code>@Before</code>，意味着它会在 testMethod1 和 testMethod2 执行之前各运行一次。</p>
+</li>
+<li><p>注解<code>@Mock</code>它实际上执行了什么操作？<br><code>@Mock</code>注解在 Mockito 框架中的作用是声明一个字段为模拟（mock）对象。当使用这个注解时，它通知 Mockito 框架自动创建并注入一个模拟实例到被注解的字段。这个过程需要通过调用 MockitoAnnotations.initMocks(this) 或使用其他类似机制来激活。<br>下面是 @Mock 注解实际上执行的主要操作：<br>a. 自动创建模拟实例：当你在一个字段上使用 @Mock 注解，并且在测试的设置阶段调用 MockitoAnnotations.initMocks(this) 或使用类似机制，Mockito 会自动创建该字段类型的模拟实例。这意味着你不需要手动调用 mock(MyClass.class) 来创建一个模拟对象；注解和初始化方法会替你完成这个工作。<strong>Using runner lets you save a little bit of coding (no need for @Before method). 在有些情况下，比如如果你使用了@RunWith(PowerMockRunner.class), 你不必再调用MockitoAnnotations.initMocks(this)。</strong><br>b. 初始化测试类中的模拟对象：在测试类中，每个用 @Mock 注解的字段在测试开始前都会被初始化为相应类型的模拟对象。这是通过在测试类的构造方法、@Before 方法（JUnit 4），或者通过使用特定的测试运行器或扩展（如 JUnit 5 的 @ExtendWith(MockitoExtension.class)）完成的。<br>c. 提供默认行为：创建的模拟对象具有 Mockito 的默认行为。例如，对于非空返回类型的方法，模拟对象默认返回零值（如 0、false、null 等）。你可以通过 stubbing（桩设定）来改变这些方法的行为。<br>d. 允许桩设定和验证：一旦模拟对象被创建，你可以使用 Mockito 的 API 对这些对象进行桩设定（stubbing）和行为验证。例如，你可以指定当特定方法被调用时返回特定的值，或者验证特定方法是否被调用了特定次数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Mock</span></span><br><span class="line">    <span class="keyword">private</span> MyService myService; <span class="comment">// Mockito 自动创建 MyService 类的模拟实例</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MockitoAnnotations.initMocks(<span class="keyword">this</span>); <span class="comment">// 初始化 @Mock 注解的字段</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 使用模拟对象进行测试...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，myService 字段被标记为 @Mock，Mockito 负责创建 MyService 类的一个模拟实例。这个模拟实例将在 setUp 方法中被初始化，该方法在每个测试方法之前执行。</p>
+</li>
+<li><p>doReturn()和doAnswer()有什么区别呢？<br>doReturn() 主要用于直接指定模拟方法的返回值，适用于简单的场景，比如当你只需要模拟一个方法返回特定的值时。<br>doAnswer() 用于实现更复杂的行为。它允许你通过 Answer 接口实现自定义逻辑，这意味着你可以在方法被调用时执行任何 Java 代码。这使得 doAnswer() 比 doReturn() 更灵活，特别是在需要访问调用方法时传入的参数或需要根据这些参数动态决定返回值的场景中。<br>doReturn语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doReturn(返回值).when(模拟对象).方法调用;</span><br></pre></td></tr></table></figure>
+<p>doAnswer语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">doAnswer(<span class="keyword">new</span> Answer&lt;TypeOfReturnValue&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TypeOfReturnValue <span class="title">answer</span><span class="params">(InvocationOnMock invocation)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="comment">// 自定义行为的逻辑</span></span><br><span class="line">        <span class="comment">// 可以使用 invocation.getArgument(index) 来获取方法调用的参数</span></span><br><span class="line">        <span class="keyword">return</span> someValue; <span class="comment">// 根据需要返回相应的值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).when(mockObject).methodToBeMocked(argumentsIfAny);</span><br></pre></td></tr></table></figure>
+<p>TypeOfReturnValue 是模拟方法预期返回的类型。如果模拟的方法返回 void，则可以使用 <code>Answer&lt;Void&gt;</code>。<br><code>methodToBeMocked(argumentsIfAny)</code>是需要模拟的方法和其参数。如果方法没有参数或者你不关心参数值，可以使用 any() 匹配器。<br>这里是一个更加简捷的lamba8版本</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">doAnswer(invocation -&gt; &#123;</span><br><span class="line">    <span class="comment">// 自定义行为的逻辑</span></span><br><span class="line">    <span class="keyword">return</span> someValue;</span><br><span class="line">&#125;).when(mockObject).methodToBeMocked(argumentsIfAny);</span><br></pre></td></tr></table></figure>
+<p>假设你有一个 CalculatorService 类，它有一个 add 方法，你想模拟这个方法的行为，使其返回两个输入参数的乘积而不是和:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CalculatorService mockCalculator = mock(CalculatorService.class);</span><br><span class="line">doAnswer(invocation -&gt; &#123;</span><br><span class="line">    <span class="keyword">int</span> arg1 = invocation.getArgument(<span class="number">0</span>); <span class="comment">// 获取第一个参数</span></span><br><span class="line">    <span class="keyword">int</span> arg2 = invocation.getArgument(<span class="number">1</span>); <span class="comment">// 获取第二个参数</span></span><br><span class="line">    <span class="keyword">return</span> arg1 * arg2; <span class="comment">// 返回参数的乘积</span></span><br><span class="line">&#125;).when(mockCalculator).add(anyInt(), anyInt());</span><br><span class="line"><span class="comment">// 使用模拟对象</span></span><br><span class="line"><span class="keyword">int</span> result = mockCalculator.add(<span class="number">5</span>, <span class="number">10</span>); <span class="comment">// 结果将是 50</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，doAnswer(…) 用于模拟 add 方法，使其返回两个参数的乘积。通过 <code>invocation.getArgument(index)</code>方法，可以访问到方法调用时传递的参数。</p>
+</li>
+<li><p><code>@Mock</code> 和<code>@Spy</code>有什么区别？<br>在 Mockito 框架中，<code>@Mock</code> 和 <code>@Spy</code> 注解都用于创建模拟（mock）对象，但它们在行为上有显著的区别。<br>在<code>@Mock</code>中<br>完全模拟：使用 <code>@Mock</code> 注解创建的对象是完全的模拟（mock）。这意味着所有的方法调用都不会执行实际的代码，除非你为它们定义了特定的行为（如使用 <code>when(...).thenReturn(...)</code>）。<br>默认行为：对于没有显式定义行为的方法，模拟对象会返回默认值（如 <code>null</code>、<code>0</code>、<code>false</code> 等），而不是执行任何实际逻辑。<br>适用场景：当你不关心或不需要对象的实际实现，只想测试与该对象的交互时，使用 <code>@Mock</code> 是合适的。<br>在<code>@Spy</code>中<br>部分模拟：使用 <code>@Spy</code> 注解创建的对象是部分模拟（spy）。这意味着除非你为特定方法定义了模拟行为，否则调用对象的方法将执行实际的代码。<br>真实行为：对于没有显式定义行为的方法，spy 对象会执行实际的方法代码。你可以为某些方法定义模拟行为，而其他方法则保持它们的原始行为。<br>适用场景：当你需要保留对象的大部分真实行为，但同时需要覆盖或模拟某些方法时，使用 <code>@Spy</code> 是合适的。</p>
+</li>
+<li><p>一般情况下，建议使用doReturn()when()而不是使用when()thenReturn()。</p>
+</li>
+<li><p>when().thenReturn(“”,””).thenThrow()是什么意思？<br>在 Mockito 中，<code>when().thenReturn(&quot;&quot;,&quot;&quot;).thenThrow()</code> 是一种链式调用，用于设置模拟对象在不同调用下的行为。这种语法允许你为同一个方法调用定义一系列不同的行为，根据它被调用的次数。<br><code>when(mockObject.someMethod())</code>：指定我们要模拟的方法调用。这里 <code>mockObject</code> 是模拟对象，而 <code>someMethod()</code> 是我们想要模拟的方法。<br><code>thenReturn(&quot;第一次返回值&quot;, &quot;第二次返回值&quot;)</code>：定义当 <code>someMethod()</code> 方法被调用时的返回值。在第一次调用时，它将返回 <code>&quot;第一次返回值&quot;</code>，在第二次调用时返回 <code>&quot;第二次返回值&quot;</code>。<br><code>thenThrow(new ExceptionType())</code>：定义当 <code>someMethod()</code> 方法第三次被调用时抛出指定类型的异常。<br>假设有一个方法 getString，你想要模拟这个方法的行为:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 实际逻辑...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">MyService mockService = mock(MyService.class);</span><br><span class="line">when(mockService.getString())</span><br><span class="line">    .thenReturn(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>)</span><br><span class="line">    .thenThrow(<span class="keyword">new</span> RuntimeException(<span class="string">&quot;No more calls allowed&quot;</span>));</span><br></pre></td></tr></table></figure>
+<p>在这个示例中，当 getString 方法被调用：<br>第一次，它将返回 “Hello”。<br>第二次，它将返回 “World”。<br>第三次及之后的调用，它将抛出一个 RuntimeException。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/" data-id="clp13stjr0004ocwk93tt118e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2023-10-13总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" class="article-date">
@@ -96,7 +190,7 @@
 </li>
 </ol>
 <ol start="3">
-<li><p>在 IntelliJ IDEA 中，当你配置 Maven 时，会看到 “Bundled (Maven 3)” 和 “Use Maven Wrapper” 两个选项。这两个选项有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png" alt="maven_setting"><br>1）Bundled (Maven 3)：”Bundled (Maven 3)” 意味着使用 IntelliJ IDEA 自带的 Maven 版本。这是一个内置于 IntelliJ IDEA 中的 Maven 版本，通常是 Maven 3 的一个版本。选择此选项意味着你不需要在本地机器上单独安装 Maven，因为 IntelliJ IDEA 已经为你提供了一个 Maven 版本。这个选项对于初学者和那些不想在自己的机器上管理 Maven 安装的用户来说是一个好选择。<br>2）Use Maven Wrapper：Maven Wrapper 是一个为 Maven 项目提供了一个可携带的构建系统的工具。通过使用 Maven Wrapper，你可以确保所有的构建都使用相同版本的 Maven，无论在哪个机器上执行构建。当你选择 “Use Maven Wrapper” 时，你的项目将使用一个名为 mvnw 的脚本来运行 Maven，而不是使用系统路径中的 mvn 命令。Maven Wrapper 脚本会检查是否已经下载了正确版本的 Maven，如果没有，它会从网上下载正确版本的 Maven 并在本地缓存，然后使用它来执行构建。这个选项对于团队工作和确保构建一致性非常有用，尤其是当不同的机器上可能有不同版本的 Maven时。</p>
+<li><p>在 IntelliJ IDEA 中，当你配置 Maven 时，会看到 “Bundled (Maven 3)” 和 “Use Maven Wrapper” 两个选项。这两个选项有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png" alt="maven_setting"><br>1）Bundled (Maven 3)：”Bundled (Maven 3)” 意味着使用 IntelliJ IDEA 自带的 Maven 版本。这是一个内置于 IntelliJ IDEA 中的 Maven 版本，通常是 Maven 3 的一个版本。选择此选项意味着你不需要在本地机器上单独安装 Maven，因为 IntelliJ IDEA 已经为你提供了一个 Maven 版本。这个选项对于初学者和那些不想在自己的机器上管理 Maven 安装的用户来说是一个好选择。<br>2）Use Maven Wrapper：Maven Wrapper 是一个为 Maven 项目提供了一个可携带的构建系统的工具。通过使用 Maven Wrapper，你可以确保所有的构建都使用相同版本的 Maven，无论在哪个机器上执行构建。当你选择 “Use Maven Wrapper” 时，你的项目将使用一个名为 mvnw 的脚本来运行 Maven，而不是使用系统路径中的 mvn 命令。<br>Maven Wrapper 脚本会检查是否已经下载了正确版本的 Maven，如果没有，它会从网上下载正确版本的 Maven 并在本地缓存，然后使用它来执行构建。这个选项对于团队工作和确保构建一致性非常有用，尤其是当不同的机器上可能有不同版本的 Maven时。</p>
 </li>
 <li><p>JAVA_HOME环境变量和Path环境变量有什么区别？<br>1）JAVA_HOME 环境变量：<br>JAVA_HOME 环境变量通常用于指定 JDK 的安装目录。它是许多 Java 应用和系统工具识别 JDK 安装位置的方式。例如，一些 Java 应用服务器和开发工具可能需要 JAVA_HOME 环境变量来找到 JDK。<br>2）Path 环境变量：<br>Path 环境变量是操作系统用来查找可执行文件的目录列表。当你在命令行中输入一个命令时，操作系统会在 Path 环境变量指定的目录列表中查找该命令的可执行文件。通过将 JDK 的 bin 目录添加到 Path 环境变量中，你可以确保操作系统能够找到 Java 编译器 (javac) 和 Java 运行时 (java) 等基本的 Java 命令。<br>当你安装JDK时，通常需要同时设置JAVA_HOME和Path环境变量，以确保：其他应用能通过 JAVA_HOME找到JDK。你能在命令行中直接运行 Java 相关的命令，如java和javac，而无需指定它们的完整路径。</p>
 </li>
@@ -111,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clnon4r990000q6wk41hs4bci" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clp13stjq0002ocwk6hdq0dtk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" data-id="ckoktmglz0006snwkapzl3195" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" data-id="clp13stjt0007ocwkcg1u6m3t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckoktmglw0002snwk6yp631v2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp13stjo0001ocwk15aidtaa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckoktmgls0000snwkhj7yd4lj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp13stjk0000ocwk74j7fhwb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="ckoktmgly0004snwk88tt2vty" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="clp13stjt0008ocwkfc0jdbx2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -541,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="ckoktmgm20008snwk32s1dbiz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="clp13stjv000aocwk6m6ihz55" class="article-share-link">Share</a>
       
       
     </footer>
@@ -582,7 +676,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="ckoktmgm00007snwkb3qve0qi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="clp13stju0009ocwk0ucdcbsh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -698,7 +792,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="ckoktmglx0003snwkf1j25yqx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="clp13stjs0005ocwkfvjkfp0u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -741,56 +835,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="ckoktmglv0001snwk5kwf921j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/24/hello-world/" class="article-date">
-  <time datetime="2020-08-24T04:23:26.871Z" itemprop="datePublished">2020-08-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hello-world/" data-id="ckoktmgly0005snwkab6fgh5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="clp13stjq0003ocwk3r91hlfy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -801,6 +846,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -818,7 +868,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -829,6 +879,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/">Mock学习</a>
+          </li>
         
           <li>
             <a href="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/">2023-10-13总结</a>
@@ -844,10 +898,6 @@
         
           <li>
             <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-01学习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/">数据库面试</a>
           </li>
         
       </ul>

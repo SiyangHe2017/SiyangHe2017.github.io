@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png">
 <meta property="og:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png">
 <meta property="article:published_time" content="2023-10-13T12:10:59.000Z">
-<meta property="article:modified_time" content="2023-10-13T13:22:41.394Z">
+<meta property="article:modified_time" content="2023-10-18T08:44:04.288Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png">
@@ -101,7 +101,7 @@
 </li>
 </ol>
 <ol start="3">
-<li><p>在 IntelliJ IDEA 中，当你配置 Maven 时，会看到 “Bundled (Maven 3)” 和 “Use Maven Wrapper” 两个选项。这两个选项有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png" alt="maven_setting"><br>1）Bundled (Maven 3)：”Bundled (Maven 3)” 意味着使用 IntelliJ IDEA 自带的 Maven 版本。这是一个内置于 IntelliJ IDEA 中的 Maven 版本，通常是 Maven 3 的一个版本。选择此选项意味着你不需要在本地机器上单独安装 Maven，因为 IntelliJ IDEA 已经为你提供了一个 Maven 版本。这个选项对于初学者和那些不想在自己的机器上管理 Maven 安装的用户来说是一个好选择。<br>2）Use Maven Wrapper：Maven Wrapper 是一个为 Maven 项目提供了一个可携带的构建系统的工具。通过使用 Maven Wrapper，你可以确保所有的构建都使用相同版本的 Maven，无论在哪个机器上执行构建。当你选择 “Use Maven Wrapper” 时，你的项目将使用一个名为 mvnw 的脚本来运行 Maven，而不是使用系统路径中的 mvn 命令。Maven Wrapper 脚本会检查是否已经下载了正确版本的 Maven，如果没有，它会从网上下载正确版本的 Maven 并在本地缓存，然后使用它来执行构建。这个选项对于团队工作和确保构建一致性非常有用，尤其是当不同的机器上可能有不同版本的 Maven时。</p>
+<li><p>在 IntelliJ IDEA 中，当你配置 Maven 时，会看到 “Bundled (Maven 3)” 和 “Use Maven Wrapper” 两个选项。这两个选项有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting_2.png" alt="maven_setting"><br>1）Bundled (Maven 3)：”Bundled (Maven 3)” 意味着使用 IntelliJ IDEA 自带的 Maven 版本。这是一个内置于 IntelliJ IDEA 中的 Maven 版本，通常是 Maven 3 的一个版本。选择此选项意味着你不需要在本地机器上单独安装 Maven，因为 IntelliJ IDEA 已经为你提供了一个 Maven 版本。这个选项对于初学者和那些不想在自己的机器上管理 Maven 安装的用户来说是一个好选择。<br>2）Use Maven Wrapper：Maven Wrapper 是一个为 Maven 项目提供了一个可携带的构建系统的工具。通过使用 Maven Wrapper，你可以确保所有的构建都使用相同版本的 Maven，无论在哪个机器上执行构建。当你选择 “Use Maven Wrapper” 时，你的项目将使用一个名为 mvnw 的脚本来运行 Maven，而不是使用系统路径中的 mvn 命令。<br>Maven Wrapper 脚本会检查是否已经下载了正确版本的 Maven，如果没有，它会从网上下载正确版本的 Maven 并在本地缓存，然后使用它来执行构建。这个选项对于团队工作和确保构建一致性非常有用，尤其是当不同的机器上可能有不同版本的 Maven时。</p>
 </li>
 <li><p>JAVA_HOME环境变量和Path环境变量有什么区别？<br>1）JAVA_HOME 环境变量：<br>JAVA_HOME 环境变量通常用于指定 JDK 的安装目录。它是许多 Java 应用和系统工具识别 JDK 安装位置的方式。例如，一些 Java 应用服务器和开发工具可能需要 JAVA_HOME 环境变量来找到 JDK。<br>2）Path 环境变量：<br>Path 环境变量是操作系统用来查找可执行文件的目录列表。当你在命令行中输入一个命令时，操作系统会在 Path 环境变量指定的目录列表中查找该命令的可执行文件。通过将 JDK 的 bin 目录添加到 Path 环境变量中，你可以确保操作系统能够找到 Java 编译器 (javac) 和 Java 运行时 (java) 等基本的 Java 命令。<br>当你安装JDK时，通常需要同时设置JAVA_HOME和Path环境变量，以确保：其他应用能通过 JAVA_HOME找到JDK。你能在命令行中直接运行 Java 相关的命令，如java和javac，而无需指定它们的完整路径。</p>
 </li>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clnon4r990000q6wk41hs4bci" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clp13stjq0002ocwk6hdq0dtk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,6 +124,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Mock学习
+        
+      </div>
+    </a>
   
   
     <a href="/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
@@ -152,7 +161,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -163,6 +172,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/">Mock学习</a>
+          </li>
         
           <li>
             <a href="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/">2023-10-13总结</a>
@@ -178,10 +191,6 @@
         
           <li>
             <a href="/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">2021-01学习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/">数据库面试</a>
           </li>
         
       </ul>
