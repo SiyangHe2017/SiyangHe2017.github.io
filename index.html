@@ -148,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/" data-id="clp13xpnw0004snwkhsokdycu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2023/11/16/Mock%E5%AD%A6%E4%B9%A0/" data-id="clp1yj7lq0004mpwk3toac37a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +181,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>在 IntelliJ IDEA 中，Maven Home Path、User Setting File 和 Local Repository有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png" alt="maven_setting"><br>1）Maven Home Path 是 Maven 安装的位置，它包含了 Maven 的二进制文件、库和其他的必要资源。该路径应该指向 Maven 安装的根目录，而不是 bin 目录。Maven Home Path 是 Maven 运行所需的基本配置，它告诉 IntelliJ IDEA 在哪里可以找到 Maven 的执行文件。<br>2）User Setting File:<br>User Setting File 是一个 XML 文件，通常名为 settings.xml，它包含了 Maven 的配置信息。这个文件通常包含了代理设置、镜像仓库配置、服务器认证信息等。通常情况下，这个文件位于 Maven 安装目录下的 conf 目录中，或者在用户的 home 目录中的 .m2 目录下。<br>3）Local Repository:<br>Local Repository 是本地的 Maven 仓库，它存储了所有的项目依赖和插件。当 Maven 需要一个特定的库或插件时，它会首先在本地仓库中查找。如果在本地仓库中找不到所需的库或插件，Maven 会尝试从中央仓库或配置的其他远程仓库下载。默认情况下，本地仓库位于用户的 home 目录中的 .m2/repository 目录下。</p>
+<li><p>在 IntelliJ IDEA 中，Maven Home Path、User Setting File 和 Local Repository有什么区别？<br><img src="/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/maven_setting.png" alt="maven_setting"><br>1）Maven Home Path 是 Maven 安装的位置，它包含了 Maven 的二进制文件、库和其他的必要资源。该路径应该指向 Maven 安装的根目录，而不是 bin 目录。Maven Home Path 是 Maven 运行所需的基本配置，它告诉 IntelliJ IDEA 在哪里可以找到 Maven 的执行文件。<br>2）User Setting File:<br>User Setting File 是一个 XML 文件，通常名为 settings.xml，它包含了 Maven 的配置信息。这个文件通常包含了代理设置、镜像仓库配置、服务器认证信息等。通常情况下，这个文件位于 Maven 安装目录下的 conf 目录中，或者在用户的 home 目录中的 .m2 目录下。<br>3）Local Repository:<br>Local Repository 是本地的 Maven 仓库，它存储了所有的项目依赖和插件。当 Maven 需要一个特定的库或插件时，它会首先在本地仓库中查找。<strong>Local Repository 是 Maven 下载和存储项目依赖的地方，它允许 Maven 在构建项目时不必每次都从远程仓库下载依赖。</strong>如果在本地仓库中找不到所需的库或插件，Maven 会尝试从中央仓库或配置的其他远程仓库下载。默认情况下，本地仓库位于用户的 home 目录中的 .m2/repository 目录下。</p>
 </li>
 <li><p>如上图所示，intellij maven设置里面的 use settings from .mvn/maven.config是什么意思？<br>在 IntelliJ IDEA 中，Maven 设置中的 “Use settings from .mvn/maven-config” 选项允许你指定一个特定的配置文件，该文件应包含 Maven 构建过程中所需的自定义设置和选项。这个配置文件通常位于你的项目目录中的 .mvn 文件夹内，并且命名为 maven.config。<br>下面是一些详细的解释：<br>mvn文件夹：mvn文件夹是一个可选的、位于项目根目录的文件夹，它可以包含一个或多个 Maven 配置文件。这个文件夹使得你可以为特定的 Maven 项目提供自定义的配置，而不是依赖于全局或用户级别的 Maven 配置。<br>maven.config 文件：maven.config 文件是一个简单的文本文件，它可以包含一系列的命令行选项，每个选项占一行。这些选项在执行 Maven 命令时将被使用，就好像它们是在命令行上指定的一样。<br>这个选项的一个常见用例是，如果你有一些特定的 Maven 插件或其他配置，它们应该只对当前项目有效，而不应该影响到其他 Maven 项目，那么你就可以使用 .mvn/maven.config 文件来指定这些设置。<br>通过启用 “Use settings from .mvn/maven.config” 选项，你告诉 IntelliJ IDEA 在处理 Maven 构建时应该考虑这个文件中的设置。<br>例如，你的 maven.config 文件可能包含以下内容，以指定一个特定的 Maven 插件版本和一些自定义的构建选项：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-P profile-name</span><br><span class="line">-DskipTests</span><br></pre></td></tr></table></figure>
@@ -205,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clp13xpnv0002snwk5c7fgc07" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2023/10/13/2023-10-13%E6%80%BB%E7%BB%93/" data-id="clp1yj7lo0002mpwk80ijd7vv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" data-id="clp13xpo00009snwk962rfbj6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/12/springboot%E7%AE%80%E4%BB%8B/" data-id="clp1yj7ls0007mpwk4lva1uik" class="article-share-link">Share</a>
       
       
     </footer>
@@ -352,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp13xpno0000snwke6q32gmb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/11/2021-03%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp1yj7lm0001mpwk001s2nxs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp13xpnt0001snwk45ra3ccz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/27/2021-01%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="clp1yj7le0000mpwkfirfbpd8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="clp13xpny0007snwk06cu3fnf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9D%A2%E8%AF%95/" data-id="clp1yj7lt0008mpwk9a4shx1v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -635,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="clp13xpo1000asnwk46g9096z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95/" data-id="clp1yj7lu000ampwk3wvk8fy5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -676,7 +676,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="clp13xpnz0008snwk5o2ydfkt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/01/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" data-id="clp1yj7lt0009mpwk41zmdyys" class="article-share-link">Share</a>
       
       
     </footer>
@@ -792,7 +792,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="clp13xpnx0005snwkgzdbhksn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/Python%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9-1/" data-id="clp1yj7lr0005mpwkh15p71hx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -835,7 +835,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="clp13xpnw0003snwk2t1oa891" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/About-hexo/" data-id="clp1yj7lp0003mpwk0bqf7kxg" class="article-share-link">Share</a>
       
       
     </footer>
